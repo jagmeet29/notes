@@ -3,12 +3,20 @@
 :root {
   font-size: 16px;
 }
+.scroll-container {
+
+}
+
 
 .mathbox {
   background-color: rgba(244, 142, 17, 0.096);
   padding: 5px 20px;
   border-radius: 10px;
   margin: 5px 0;
+  overflow: auto; 
+  padding: 10px;
+  white-space: normal; 
+
 }
 /* Reset default browser styles and use better box model */
 * {
@@ -203,5 +211,10 @@ tr:hover {
 
   tr:hover {
     background-color: #222;
+  }
+
+  .mathbox {
+    background-color: rgba(246, 214, 174, 0.159);
+    color: #f0f0f0;
   }
 }
