@@ -17,27 +17,54 @@ body {
   font-family: "Lora", sans-serif;
   font-size: 1rem;
   line-height: 1.5;
-
 }
 
 /* Heading styles
    1.75rem = 28px at default root size
    Using Times New Roman for decorative headings */
-h1  {
+h1 {
   font-size: 2rem;
-  color: #F24130;
+  color: #f24130;
   font-family: "Open Sans", sans-serif;
   margin-bottom: 1rem;
   line-height: 2rem;
 }
-h2  {
+h2 {
   font-size: 2rem;
-  color:#2F736C;
+  color: #2f736c;
   font-family: "Open Sans", sans-serif;
   margin-bottom: 1rem;
   line-height: 2rem;
 }
 
+/* General Table Styling */
+table {
+  width: 50%;
+  margin: 20px 10px;
+  border-collapse: collapse;
+
+  font-family: Arial, sans-serif;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f0d8;
+  color: black;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
 /* Container for responsive layout
    90% width with max-width prevents too wide content
    Auto margins center the container horizontally */
@@ -110,13 +137,16 @@ img {
    Further reduces font size for smaller screens
    480px targets most mobile devices */
 @media screen and (max-width: 480px) {
+  table {
+    width: 100%;
+  }
   :root {
     font-size: 16px;
   }
 
   .responsive-container {
     width: 95%;
-    padding: 0.5rem;
+    padding: 20px;
     gap: 0.5rem;
     display: flex;
     flex-direction: column;
