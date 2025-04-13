@@ -27,14 +27,14 @@ h1 {
   color: #f24130;
   font-family: "Open Sans", sans-serif;
   margin-bottom: 1rem;
-  line-height: .9rem;
+  line-height: 0.9rem;
 }
 h2 {
   font-size: 2rem;
   color: #2f736c;
   margin-top: 0rem;
   font-family: "Open Sans", sans-serif;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   line-height: 0rem;
 }
 
@@ -159,7 +159,10 @@ img {
     flex-direction: column;
   }
 
-ul {padding: 0px 20px;}
+  ul,
+  ol {
+    padding: 0px 20px;
+  }
 
   img {
     width: 100%;
