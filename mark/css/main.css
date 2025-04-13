@@ -1,43 +1,51 @@
 /* Typography */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Page Title */
-.page-title {
-  text-align: center;
-  color: blueviolet;
-  font-family: "Times New Roman", Times, serif;
+a {
+  text-decoration: none;
+  color: black;
 }
 
-/* Card Component */
-.card {
-  background-color: rgb(171, 128, 212);
-  border-radius: 10px;
-  width: 200px;
-  margin: 0 auto;
-  padding: 0 0 10px 0;
+a:hover {
+  text-decoration: none;
+  color: burlywood;
+  font-weight: bold;
   
 }
-
-.card__subject {
+h1 {
+  font-size: 2rem;
+  color: #f24130;
+  font-family: "Open Sans", sans-serif;
+  line-height: 2rem;
+  padding: 10px 0px;
   text-align: center;
-  padding: 20px 0 0;
-  color: rgba(0, 0, 0, 0.806);
-  font-size: large;
 }
 
-.card__link {
-  text-decoration: none;
-  color: white;
-  padding: 10px ;
-  display: block;
-  text-align: center;
-  background-color: rgb(85, 66, 103);
-  margin: 2px 10px;
-  border-radius: 10px;
+/* General Table Styling */
+table {
+  width: 70%;
+  margin: 20px 10px;
+  border-collapse: collapse;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
 }
 
-.card__link:hover {
-  background-color: rgb(100, 78, 122);
+th,
+td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f0d8;
+  color: black;
 }

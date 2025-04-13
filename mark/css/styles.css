@@ -26,15 +26,17 @@ h1 {
   font-size: 2rem;
   color: #f24130;
   font-family: "Open Sans", sans-serif;
-  margin-bottom: 1rem;
-  line-height: 2rem;
+  margin-bottom: 2rem;
+
+  line-height: 0rem;
 }
 h2 {
   font-size: 2rem;
   color: #2f736c;
+  margin-top: 1rem;
   font-family: "Open Sans", sans-serif;
   margin-bottom: 1rem;
-  line-height: 2rem;
+  line-height: 0rem;
 }
 
 /* General Table Styling */
@@ -74,7 +76,7 @@ tr:hover {
   margin: 0 auto;
   padding: 2rem;
   display: grid;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 /* Responsive image settings
@@ -113,7 +115,7 @@ img {
    768px is standard tablet width */
 @media screen and (max-width: 768px) {
   :root {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .responsive-container {
@@ -121,7 +123,10 @@ img {
     padding: 1rem;
     gap: 1rem;
   }
-
+  h1,
+  h2 {
+    line-height: 2rem;
+  }
   img {
     width: 100%;
     margin: 1rem auto;
@@ -144,6 +149,10 @@ img {
     font-size: 16px;
   }
 
+  h1,
+  h2 {
+    line-height: 2.2rem;
+  }
   .responsive-container {
     width: 95%;
     padding: 20px;
