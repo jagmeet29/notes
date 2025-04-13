@@ -83,18 +83,7 @@ tr:hover {
    - auto height maintains aspect ratio
    - border-radius adds rounded corners
    - max-width prevents overflow */
-img {
-  margin: 0rem auto;
-  display: block;
-  border-radius: 10px;
-  width: 80%;
-  height: auto;
-  max-width: 800px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  width: 100%;
-  max-width: 100%;
-}
+
 
 /* Side-by-side layout for content */
 .content-wrapper {
@@ -126,10 +115,7 @@ img {
   h2 {
     line-height: 2rem;
   }
-  img {
-    width: 100%;
-    margin: 1rem auto;
-  }
+ 
 
   .content-wrapper {
     grid-template-columns: 1fr;
@@ -164,10 +150,7 @@ img {
     padding: 10px 20px;
   }
 
-  img {
-    width: 100%;
-    margin: 0.5rem auto;
-  }
+
 }
 
 /* Print layout */
@@ -177,10 +160,6 @@ img {
     padding: 0;
   }
 
-  img {
-    width: 70%;
-    page-break-inside: avoid;
-  }
 }
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
@@ -213,7 +192,5 @@ img {
     background-color: #222;
   }
 
-  img {
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-  }
+
 }
