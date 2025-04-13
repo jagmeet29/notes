@@ -4,6 +4,12 @@
   font-size: 16px;
 }
 
+.mathbox {
+  background-color: rgba(244, 142, 17, 0.096);
+  padding: 5px 20px;
+  border-radius: 10px;
+  margin: 5px 0;
+}
 /* Reset default browser styles and use better box model */
 * {
   margin: 0;
@@ -29,8 +35,7 @@ h1 {
   margin-bottom: 1rem;
   line-height: 0.9rem;
 }
-h2
- {
+h2 {
   font-size: 2rem;
   color: #2f736c;
   margin-top: 0rem;
@@ -39,7 +44,8 @@ h2
   line-height: 0rem;
 }
 
-h4, h3 {
+h4,
+h3 {
   font-size: 1.4rem;
   color: #2f736c;
   margin-top: 0rem;
