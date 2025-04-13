@@ -29,8 +29,18 @@ h1 {
   margin-bottom: 1rem;
   line-height: 0.9rem;
 }
-h2 {
+h2
+ {
   font-size: 2rem;
+  color: #2f736c;
+  margin-top: 0rem;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 0.5rem;
+  line-height: 0rem;
+}
+
+h4, h3 {
+  font-size: 1.4rem;
   color: #2f736c;
   margin-top: 0rem;
   font-family: "Open Sans", sans-serif;
@@ -84,7 +94,6 @@ tr:hover {
    - border-radius adds rounded corners
    - max-width prevents overflow */
 
-
 /* Side-by-side layout for content */
 .content-wrapper {
   display: grid;
@@ -112,10 +121,11 @@ tr:hover {
     gap: 1rem;
   }
   h1,
-  h2 {
+  h2,
+  h3,
+  h4 {
     line-height: 2rem;
   }
- 
 
   .content-wrapper {
     grid-template-columns: 1fr;
@@ -149,8 +159,6 @@ tr:hover {
   ol {
     padding: 10px 20px;
   }
-
-
 }
 
 /* Print layout */
@@ -159,7 +167,6 @@ tr:hover {
     width: 100%;
     padding: 0;
   }
-
 }
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
@@ -191,6 +198,4 @@ tr:hover {
   tr:hover {
     background-color: #222;
   }
-
-
 }
