@@ -16,33 +16,5 @@
       <a href="Unit1.html" class="card__link">Unit 1</a>
       <a href="Unit2.html" class="card__link">Unit 2</a>
     </div>
-<svg width="200" height="200">
-    <rect x="50" y="50" width="100" height="50" stroke="black" fill="lightgray"/>
-    <text x="75" y="80" font-size="20">D Flip-Flop</text>
-</svg><canvas id="counterCanvas" width="400" height="200"></canvas>
-<script>
-    var canvas = document.getElementById("counterCanvas");
-    var ctx = canvas.getContext("2d");
-    var count = 0;
-
-    function drawCounter() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = "black";
-        ctx.font = "30px Arial";
-        ctx.fillText("Counter: " + count, 150, 100);
-    }
-
-    function increment() {
-        count = (count + 1) % 16; // Simulating a 4-bit counter
-        drawCounter();
-    }
-
-    setInterval(increment, 1000);
-</script><script src="https://d3js.org/d3.v6.min.js"></script>
-<script>
-    var svg = d3.select("body").append("svg").attr("width", 400).attr("height", 200);
-    svg.append("rect").attr("x", 50).attr("y", 50).attr("width", 100).attr("height", 50).attr("fill", "lightblue");
-    svg.append("text").attr("x", 75).attr("y", 80).text("JK Flip-Flop");
-</script>
   </body>
 </html>
