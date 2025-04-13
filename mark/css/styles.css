@@ -26,16 +26,15 @@ h1 {
   font-size: 2rem;
   color: #f24130;
   font-family: "Open Sans", sans-serif;
-  margin-bottom: 2rem;
-
-  line-height: 0rem;
+  margin-bottom: 1rem;
+  line-height: .9rem;
 }
 h2 {
   font-size: 2rem;
   color: #2f736c;
-  margin-top: 1rem;
+  margin-top: 0rem;
   font-family: "Open Sans", sans-serif;
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
   line-height: 0rem;
 }
 
