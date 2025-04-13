@@ -1,0 +1,142 @@
+/* Set the base font size for the entire document
+   16px is the recommended default size for web content */
+:root {
+  font-size: 16px;
+}
+
+/* Reset default browser styles and use better box model */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base typography and spacing for body content
+   Using relative units (rem) for better accessibility */
+body {
+  font-family: "Lora", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+
+}
+
+/* Heading styles
+   1.75rem = 28px at default root size
+   Using Times New Roman for decorative headings */
+h1  {
+  font-size: 2rem;
+  color: #F24130;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 1rem;
+  line-height: 2rem;
+}
+h2  {
+  font-size: 2rem;
+  color:#2F736C;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 1rem;
+  line-height: 2rem;
+}
+
+/* Container for responsive layout
+   90% width with max-width prevents too wide content
+   Auto margins center the container horizontally */
+.responsive-container {
+  width: 70%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  gap: 2rem;
+}
+
+/* Responsive image settings
+   - block display removes inline spacing
+   - auto height maintains aspect ratio
+   - border-radius adds rounded corners
+   - max-width prevents overflow */
+img {
+  margin: 0rem auto;
+  display: block;
+  border-radius: 10px;
+  width: 80%;
+  height: auto;
+  max-width: 800px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Side-by-side layout for content */
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.content-text {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Tablet breakpoint
+   Adjusts font size and layout for medium screens
+   768px is standard tablet width */
+@media screen and (max-width: 768px) {
+  :root {
+    font-size: 14px;
+  }
+
+  .responsive-container {
+    width: 90%;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  img {
+    width: 100%;
+    margin: 1rem auto;
+  }
+
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Mobile breakpoint
+   Further reduces font size for smaller screens
+   480px targets most mobile devices */
+@media screen and (max-width: 480px) {
+  :root {
+    font-size: 16px;
+  }
+
+  .responsive-container {
+    width: 95%;
+    padding: 0.5rem;
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  img {
+    width: 100%;
+    margin: 0.5rem auto;
+  }
+}
+
+/* Print layout */
+@media print {
+  .responsive-container {
+    width: 100%;
+    padding: 0;
+  }
+
+  img {
+    width: 70%;
+    page-break-inside: avoid;
+  }
+}
