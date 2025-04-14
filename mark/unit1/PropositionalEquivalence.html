@@ -13,22 +13,296 @@
   <body>
     <div class="responsive-container">
       <h1 style="text-align: center">Unit 1</h1>
-      <h2>Propositional Equivalence</h2>
-      <p>Two statements are equivalent if they have the same truth value.</p>
-      <ol>
-        <li>
-          <strong>Tautology</strong>: A compound proposition which has all true
-          values.
-        </li>
-        <li>
-          <strong>Contradiction</strong>: A compound proposition which has all
-          false values.
-        </li>
-        <li>
-          <strong>Contingency</strong>: A compound proposition which has both
-          true and false values.
-        </li>
-      </ol>
+      <h2>Tautologies</h1>
+<p>A Tautology is a formula which is always true for every value of its propositional variables.</p>
+
+<h3>Example: Prove [(A → B) ∧ A] → B is a tautology</h3>
+<p>The truth table is as follows:</p>
+
+<table border="1">
+  <tr>
+    <th>A</th>
+    <th>B</th>
+    <th>A → B</th>
+    <th>(A → B) ∧ A</th>
+    <th>[(A → B) ∧ A] → B</th>
+  </tr>
+  <tr>
+    <td>True</td>
+    <td>True</td>
+    <td>True</td>
+    <td>True</td>
+    <td>True</td>
+  </tr>
+  <tr>
+    <td>True</td>
+    <td>False</td>
+    <td>False</td>
+    <td>False</td>
+    <td>True</td>
+  </tr>
+  <tr>
+    <td>False</td>
+    <td>True</td>
+    <td>True</td>
+    <td>False</td>
+    <td>True</td>
+  </tr>
+  <tr>
+    <td>False</td>
+    <td>False</td>
+    <td>True</td>
+    <td>False</td>
+    <td>True</td>
+  </tr>
+</table>
+
+<p>As we can see, every value of [(A → B) ∧ A] → B is "True", it is a tautology.</p>
+
+<h2>Contradictions</h2>
+<p>A Contradiction is a formula which is always false for every value of its propositional variables.</p>
+
+<h3>Example: Prove (A ∨ B) ∧ [(¬A) ∧ (¬B)] is a contradiction</h3>
+<p>The truth table is as follows:</p>
+
+<table border="1">
+  <tr>
+    <th>A</th>
+    <th>B</th>
+    <th>A ∨ B</th>
+    <th>¬A</th>
+    <th>¬B</th>
+    <th>(¬A) ∧ (¬B)</th>
+    <th>(A ∨ B) ∧ [(¬A) ∧ (¬B)]</th>
+  </tr>
+  <tr>
+    <td>True</td>
+    <td>True</td>
+    <td>True</td>
+    <td>False</td>
+    <td>False</td>
+    <td>False</td>
+    <td>False</td>
+  </tr>
+  <tr>
+    <td>True</td>
+    <td>False</td>
+    <td>True</td>
+    <td>False</td>
+    <td>True</td>
+    <td>False</td>
+    <td>False</td>
+  </tr>
+  <tr>
+    <td>False</td>
+    <td>True</td>
+    <td>True</td>
+    <td>True</td>
+    <td>False</td>
+    <td>False</td>
+    <td>False</td>
+  </tr>
+  <tr>
+    <td>False</td>
+    <td>False</td>
+    <td>False</td>
+    <td>True</td>
+    <td>True</td>
+    <td>True</td>
+    <td>False</td>
+  </tr>
+</table>
+
+<p>As we can see, every value of (A ∨ B) ∧ [(¬A) ∧ (¬B)] is "False", it is a contradiction.</p>
+
+<h2>Contingency</h2>
+<p>A Contingency is a formula which has both true and false values for every value of its propositional variables.</p>
+
+<h3>Example: Prove (A ∨ B) ∧ (¬A) is a contingency</h3>
+<p>The truth table is as follows:</p>
+
+<table border="1">
+  <tr>
+    <th>A</th>
+    <th>B</th>
+    <th>A ∨ B</th>
+    <th>¬A</th>
+    <th>(A ∨ B) ∧ (¬A)</th>
+  </tr>
+  <tr>
+    <td>True</td>
+    <td>True</td>
+    <td>True</td>
+    <td>False</td>
+    <td>False</td>
+  </tr>
+  <tr>
+    <td>True</td>
+    <td>False</td>
+    <td>True</td>
+    <td>False</td>
+    <td>False</td>
+  </tr>
+  <tr>
+    <td>False</td>
+    <td>True</td>
+    <td>True</td>
+    <td>True</td>
+    <td>True</td>
+  </tr>
+  <tr>
+    <td>False</td>
+    <td>False</td>
+    <td>False</td>
+    <td>True</td>
+    <td>False</td>
+  </tr>
+</table>
+
+<p>As we can see, every value of (A ∨ B) ∧ (¬A) has both "True" and "False", it is a contingency.</p>
+
+<h2>Propositional Equivalences</h2>
+<p>Two statements X and Y are logically equivalent if any of the following two conditions hold:</p>
+<ul>
+  <li>The truth tables of each statement have the same truth values.</li>
+  <li>The bi-conditional statement X ⇔ Y is a tautology.</li>
+</ul>
+
+<h3>Example: Prove ¬(A ∨ B) and [(¬A) ∧ (¬B)] are equivalent</h3>
+
+<h4>Testing by 1st method (Matching truth table)</h4>
+
+<table border="1">
+  <tr>
+    <th>A</th>
+    <th>B</th>
+    <th>A ∨ B</th>
+    <th>¬(A ∨ B)</th>
+    <th>¬A</th>
+    <th>¬B</th>
+    <th>[(¬A) ∧ (¬B)]</th>
+  </tr>
+  <tr>
+    <td>True</td>
+    <td>True</td>
+    <td>True</td>
+    <td>False</td>
+    <td>False</td>
+    <td>False</td>
+    <td>False</td>
+  </tr>
+  <tr>
+    <td>True</td>
+    <td>False</td>
+    <td>True</td>
+    <td>False</td>
+    <td>False</td>
+    <td>True</td>
+    <td>False</td>
+  </tr>
+  <tr>
+    <td>False</td>
+    <td>True</td>
+    <td>True</td>
+    <td>False</td>
+    <td>True</td>
+    <td>False</td>
+    <td>False</td>
+  </tr>
+  <tr>
+    <td>False</td>
+    <td>False</td>
+    <td>False</td>
+    <td>True</td>
+    <td>True</td>
+    <td>True</td>
+    <td>True</td>
+  </tr>
+</table>
+
+<p>Here, we can see the truth values of ¬(A ∨ B) and [(¬A) ∧ (¬B)] are the same, hence the statements are equivalent.</p>
+
+<h4>Testing by 2nd method (Bi-conditionality)</h4>
+
+<table border="1">
+  <tr>
+    <th>A</th>
+    <th>B</th>
+    <th>¬(A ∨ B)</th>
+    <th>[(¬A) ∧ (¬B)]</th>
+    <th>[¬(A ∨ B)] ⇔ [(¬A) ∧ (¬B)]</th>
+  </tr>
+  <tr>
+    <td>True</td>
+    <td>True</td>
+    <td>False</td>
+    <td>False</td>
+    <td>True</td>
+  </tr>
+  <tr>
+    <td>True</td>
+    <td>False</td>
+    <td>False</td>
+    <td>False</td>
+    <td>True</td>
+  </tr>
+  <tr>
+    <td>False</td>
+    <td>True</td>
+    <td>False</td>
+    <td>False</td>
+    <td>True</td>
+  </tr>
+  <tr>
+    <td>False</td>
+    <td>False</td>
+    <td>True</td>
+    <td>True</td>
+    <td>True</td>
+  </tr>
+</table>
+
+<p>As [¬(A ∨ B)] ⇔ [(¬A) ∧ (¬B)] is a tautology, the statements are equivalent.</p>
+
+<h2>Inverse, Converse, and Contra-positive</h1>
+
+<p>Implication / if-then (→) is also called a conditional statement. It has two parts:</p>
+<ul>
+  <li>Hypothesis, p</li>
+  <li>Conclusion, q</li>
+</ul>
+<p>As mentioned earlier, it is denoted as p → q.</p>
+
+<p><strong>Example of Conditional Statement:</strong> “If you do your homework, you will not be punished.” Here, "you do your homework" is the hypothesis, p, and "you will not be punished" is the conclusion, q.</p>
+
+<h3><strong>Inverse</strong></h3>
+<p>The inverse of the conditional statement is the negation of both the hypothesis and the conclusion. If the statement is “If p, then q”, the inverse will be “If not p, then not q”. Thus the inverse of p → q is ¬p → ¬q.</p>
+<p><strong>Example:</strong> The inverse of “If you do your homework, you will not be punished” is “If you do not do your homework, you will be punished.”</p>
+
+<h3><strong>Converse</strong></h3>
+<p>The converse of the conditional statement is computed by interchanging the hypothesis and the conclusion. If the statement is “If p, then q”, the converse will be “If q, then p”. The converse of p → q is q → p.</p>
+<p><strong>Example:</strong> The converse of "If you do your homework, you will not be punished" is "If you will not be punished, you do your homework."</p>
+
+<h3><strong>Contra-positive</strong></h3>
+<p>The contra-positive of the conditional is computed by interchanging the hypothesis and the conclusion of the inverse statement. If the statement is “If p, then q”, the contra-positive will be “If not q, then not p”. The contra-positive of p → q is ¬q → ¬p.</p>
+<p><strong>Example:</strong> The contra-positive of "If you do your homework, you will not be punished" is "If you are punished, you did not do your homework."</p>
+
+<h3><strong>Conjunctive Normal Form</strong></h3>
+<p>A compound statement is in conjunctive normal form if it is obtained by operating AND among variables (negation of variables included) connected with ORs. In terms of set operations, it is a compound statement obtained by intersection among variables connected with unions.</p>
+<h4>Examples:</h4>
+<ul>
+  <li>(A ∨ B) ∧ (A ∨ C) ∧ (B ∨ C ∨ D)</li>
+  <li>(P ∪ Q) ∩ (Q ∪ R)</li>
+</ul>
+
+<h3><strong>Disjunctive Normal Form</strong></h3>
+<p>A compound statement is in disjunctive normal form if it is obtained by operating OR among variables (negation of variables included) connected with ANDs. In terms of set operations, it is a compound statement obtained by union among variables connected with intersections.</p>
+<h4>Examples:</h4>
+<ul>
+  <li>(A ∧ B) ∨ (A ∧ C) ∨ (B ∧ C ∧ D)</li>
+  <li>(P ∩ Q) ∪ (Q ∩ R)</li>
+</ul>
+
       <h2>Logical Equivalence</h2>
       <p>
         Two statements are logically equivalent if they have the same truth
