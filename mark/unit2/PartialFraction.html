@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Configure MathJax to use $...$ and \( ... \) for inline math -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+        },
+      };
+    </script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+  </head>
+  <body>
+    <div class="responsive-container">
+      <h1 style="text-align: center">Unit 2</h1>
+      <h2>Partial Fraction</h2>
+        <p>Partial fraction decomposition is a technique used to break down a complex rational function into simpler fractions. This is particularly useful in calculus for integration. The basic idea is to express a given rational function as a sum of simpler fractions.</p>
+       
+        <p>For example, consider the rational function:</p>
+        <p>$$ \frac{2x + 3}{(x - 1)(x^2 + 1)} $$</p>
+        <p>We can decompose it as follows:</p>
+        <p>$$ \frac{2x + 3}{(x - 1)(x^2 + 1)} = \frac{A}{x - 1} + \frac{Bx + C}{x^2 + 1} $$</p>
+        <p>where A, B, and C are constants to be determined.</p>
+
+        <h3>Ways to Solve Partial Fractions</h3>
+        <p>Partial fraction decomposition is a technique used to break down complex rational expressions into simpler fractions. Here are the main methods to solve partial fractions:</p>
+
+        <h4>Standard Decomposition Method</h4>
+        <p>This is the most common approach and follows these steps:</p>
+        <ol>
+          <li><strong>Ensure proper rational expression</strong>: The degree of numerator must be less than the degree of denominator. If not, perform polynomial long division first.</li>
+          <li><strong>Factor the denominator</strong>: Break it down into:
+            <ul>
+              <li>Linear factors (x - a)</li>
+              <li>Repeated linear factors (x - a)ⁿ</li>
+              <li>Irreducible quadratic factors (ax² + bx + c)</li>
+            </ul>
+          </li>
+          <li><strong>Set up partial fractions</strong>: Write one fraction for each factor:
+            <ul>
+              <li>For linear factor (x - a): A/(x - a)</li>
+              <li>For repeated linear factor (x - a)ⁿ: A₁/(x - a) + A₂/(x - a)² + ... + Aₙ/(x - a)ⁿ</li>
+              <li>For irreducible quadratic factor (ax² + bx + c): (Bx + C)/(ax² + bx + c)</li>
+            </ul>
+          </li>
+          <li><strong>Eliminate fractions</strong>: Multiply all terms by the least common denominator (LCD).</li>
+          <li><strong>Find coefficients</strong>: Several methods exist for this step (explained below).</li>
+        </ol>
+
+        <h4>Methods for Finding Coefficients</h4>
+
+        <h5>1. Substitution Method</h5>
+        <p>After multiplying by the LCD, substitute values that make factors of the denominator zero. For example, if (x - 2) is a factor, substitute x = 2.</p>
+
+        <h5>2. Equating Coefficients Method</h5>
+        <p>After multiplying both sides by the LCD:
+          <ul>
+            <li>Expand the expressions</li>
+            <li>Collect like terms</li>
+            <li>Create equations by matching coefficients of same powers of x</li>
+            <li>Solve the resulting system of equations</li>
+          </ul>
+        </p>
+
+        <h5>3. Residue Method</h5>
+        <p>This method uses complex analysis:
+          <ul>
+            <li>Calculate the residue of the rational function at each pole</li>
+            <li>For simple poles, the residue can be calculated using: Res(f, a) = lim(x→a) [(x-a)f(x)]</li>
+            <li>These residues directly give the coefficients in the partial fraction decomposition</li>
+          </ul>
+        </p>
+
+        <h5>4. Limit Method</h5>
+        <p>Multiply both sides of the equation by a particular factor from the denominator and take the limit as x approaches the root of that factor. This isolates one coefficient by eliminating other terms.</p>
+
+        <h4>Special Cases</h4>
+        <ul>
+          <li><strong>Improper Fractions</strong>: When the degree of numerator ≥ degree of denominator, perform polynomial long division first.</li>
+          <li><strong>Irreducible Quadratic Factors</strong>: Over real numbers, quadratics with negative discriminants can't be further factored. Use the form (Ax + B)/(ax² + bx + c).</li>
+          <li><strong>Complex Roots</strong>: If working in complex number field, all polynomials can be factored into linear terms, simplifying the decomposition.</li>
+        </ul>
+    </div>
+  </body>
+</html>
