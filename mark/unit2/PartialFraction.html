@@ -37,64 +37,85 @@
         <p>$$ \frac{2x + 3}{(x - 1)(x^2 + 1)} = \frac{A}{x - 1} + \frac{Bx + C}{x^2 + 1} $$</p>
         <p>where A, B, and C are constants to be determined.</p>
 
-        <h3>Ways to Solve Partial Fractions</h3>
-        <p>Partial fraction decomposition is a technique used to break down complex rational expressions into simpler fractions. Here are the main methods to solve partial fractions:</p>
+      <h3>Let's explore three alternative methods for partial fraction decomposition using the example:</h3>
+      <div class="mathbox">
+        <p><strong>Decompose $$ \frac{3x + 5}{x^2 + 5x + 6} $$</strong></p>
 
-        <h4>Standard Decomposition Method</h4>
-        <p>This is the most common approach and follows these steps:</p>
-        <ol>
-          <li><strong>Ensure proper rational expression</strong>: The degree of numerator must be less than the degree of denominator. If not, perform polynomial long division first.</li>
-          <li><strong>Factor the denominator</strong>: Break it down into:
-            <ul>
-              <li>Linear factors (x - a)</li>
-              <li>Repeated linear factors (x - a)ⁿ</li>
-              <li>Irreducible quadratic factors (ax² + bx + c)</li>
-            </ul>
-          </li>
-          <li><strong>Set up partial fractions</strong>: Write one fraction for each factor:
-            <ul>
-              <li>For linear factor (x - a): A/(x - a)</li>
-              <li>For repeated linear factor (x - a)ⁿ: A₁/(x - a) + A₂/(x - a)² + ... + Aₙ/(x - a)ⁿ</li>
-              <li>For irreducible quadratic factor (ax² + bx + c): (Bx + C)/(ax² + bx + c)</li>
-            </ul>
-          </li>
-          <li><strong>Eliminate fractions</strong>: Multiply all terms by the least common denominator (LCD).</li>
-          <li><strong>Find coefficients</strong>: Several methods exist for this step (explained below).</li>
-        </ol>
+        <hr />
 
-        <h4>Methods for Finding Coefficients</h4>
+        <h4>1. <strong>Substitution Method</strong></h4>
+        <p><strong>Step 1:</strong> Factor the denominator:</p>
+        <p>$$ x^2 + 5x + 6 = (x + 2)(x + 3) $$</p>
 
-        <h5>1. Substitution Method</h5>
-        <p>After multiplying by the LCD, substitute values that make factors of the denominator zero. For example, if (x - 2) is a factor, substitute x = 2.</p>
+        <p><strong>Step 2:</strong> Express as partial fractions:</p>
+        <p>$$ \frac{3x + 5}{(x + 2)(x + 3)} = \frac{A}{x + 2} + \frac{B}{x + 3} $$</p>
 
-        <h5>2. Equating Coefficients Method</h5>
-        <p>After multiplying both sides by the LCD:
-          <ul>
-            <li>Expand the expressions</li>
-            <li>Collect like terms</li>
-            <li>Create equations by matching coefficients of same powers of x</li>
-            <li>Solve the resulting system of equations</li>
-          </ul>
-        </p>
+        <p><strong>Step 3:</strong> Multiply both sides by $$(x + 2)(x + 3)$$:</p>
+        <p>$$ 3x + 5 = A(x + 3) + B(x + 2) $$</p>
 
-        <h5>3. Residue Method</h5>
-        <p>This method uses complex analysis:
-          <ul>
-            <li>Calculate the residue of the rational function at each pole</li>
-            <li>For simple poles, the residue can be calculated using: Res(f, a) = lim(x→a) [(x-a)f(x)]</li>
-            <li>These residues directly give the coefficients in the partial fraction decomposition</li>
-          </ul>
-        </p>
-
-        <h5>4. Limit Method</h5>
-        <p>Multiply both sides of the equation by a particular factor from the denominator and take the limit as x approaches the root of that factor. This isolates one coefficient by eliminating other terms.</p>
-
-        <h4>Special Cases</h4>
+        <p><strong>Step 4:</strong> Substitute roots of the denominator:</p>
         <ul>
-          <li><strong>Improper Fractions</strong>: When the degree of numerator ≥ degree of denominator, perform polynomial long division first.</li>
-          <li><strong>Irreducible Quadratic Factors</strong>: Over real numbers, quadratics with negative discriminants can't be further factored. Use the form (Ax + B)/(ax² + bx + c).</li>
-          <li><strong>Complex Roots</strong>: If working in complex number field, all polynomials can be factored into linear terms, simplifying the decomposition.</li>
+          <li>Let $$ x = -2 $$:
+            $$ 3(-2) + 5 = A(1) \implies -1 = A $$</li>
+          <li>Let $$ x = -3 $$:
+            $$ 3(-3) + 5 = B(-1) \implies -4 = -B \implies B = 4 $$</li>
         </ul>
+
+        <p><strong>Result:</strong></p>
+        <p>$$ \frac{3x + 5}{(x + 2)(x + 3)} = \frac{-1}{x + 2} + \frac{4}{x + 3} $$</p>
+
+        <hr />
+
+        <h4>2. <strong>Equating Coefficients Method</strong></h4>
+        <p><strong>Step 1–3:</strong> Same as above.</p>
+        <p><strong>Step 4:</strong> Expand the right-hand side:</p>
+        <p>$$ 3x + 5 = (A + B)x + (3A + 2B) $$</p>
+
+        <p><strong>Step 5:</strong> Equate coefficients of $$x$$ and constants:</p>
+        <ul>
+          <li>Coefficient of $$x$$:
+            $$ A + B = 3 $$</li>
+          <li>Constant term:
+            $$ 3A + 2B = 5 $$</li>
+        </ul>
+
+        <p><strong>Step 6:</strong> Solve the system:</p>
+        <ul>
+          <li>From $$ A = 3 - B $$, substitute into the second equation:
+            $$ 3(3 - B) + 2B = 5 \implies 9 - 3B + 2B = 5 \implies -B = -4 \implies B = 4 $$</li>
+          <li>Then $$ A = 3 - 4 = -1 $$.</li>
+        </ul>
+
+        <p><strong>Result:</strong> Same as the substitution method.</p>
+
+        <hr />
+
+        <h4>3. <strong>Cover-Up Method (Shortcut)</strong></h4>
+        <p><strong>Step 1:</strong> Factor the denominator:</p>
+        <p>$$ (x + 2)(x + 3) $$</p>
+
+        <p><strong>Step 2:</strong> Find $$A$$ by "covering" $$(x + 2)$$ and substituting $$x = -2$$:</p>
+        <p>$$ A = \frac{3(-2) + 5}{(-2) + 3} = \frac{-6 + 5}{1} = -1 $$</p>
+
+        <p><strong>Step 3:</strong> Find $$B$$ by "covering" $$(x + 3)$$ and substituting $$x = -3$$:</p>
+        <p>$$ B = \frac{3(-3) + 5}{(-3) + 2} = \frac{-9 + 5}{-1} = 4 $$</p>
+
+        <p><strong>Result:</strong> Same as above.</p>
+
+        <hr />
+
+        <h4>When to Use Each Method:</h4>
+        <ul>
+          <li><strong>Substitution:</strong> Best for distinct linear factors.</li>
+          <li><strong>Equating Coefficients:</strong> Works for all cases (even repeated/quadratic factors).</li>
+          <li><strong>Cover-Up:</strong> Quick trick for linear factors.</li>
+        </ul>
+
+        <p>Final decomposed form:</p>
+        <p>$$ \frac{3x + 5}{(x + 2)(x + 3)} = \frac{-1}{x + 2} + \frac{4}{x + 3} $$</p>
+
+        <hr />
+      </div>
     </div>
   </body>
 </html>
