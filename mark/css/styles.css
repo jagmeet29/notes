@@ -13,15 +13,20 @@
   white-space: normal;
 }
 
+.table-container {
+  margin: 5px 0;
+  overflow: auto;
+  padding: 10px;
+  white-space: normal;
+}
 .mathbox {
   background-color: rgba(244, 142, 17, 0.096);
   padding: 5px 20px;
   border-radius: 10px;
   margin: 5px 0;
-  overflow: auto; 
+  overflow: auto;
   padding: 10px;
-  white-space: normal; 
-
+  white-space: normal;
 }
 /* Reset default browser styles and use better box model */
 * {
