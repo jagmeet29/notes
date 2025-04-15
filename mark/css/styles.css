@@ -52,6 +52,7 @@ h1 {
   font-family: "Open Sans", sans-serif;
   margin-bottom: 1rem;
   line-height: 0.9rem;
+  line-height: 2rem;
 }
 h2 {
   font-size: 2rem;
@@ -59,7 +60,7 @@ h2 {
   margin-top: 0rem;
   font-family: "Open Sans", sans-serif;
   margin-bottom: 0.5rem;
-  line-height: 0rem;
+  line-height: 2rem;
 }
 
 h4,
@@ -69,7 +70,7 @@ h3 {
   margin-top: 0rem;
   font-family: "Open Sans", sans-serif;
   margin-bottom: 0.5rem;
-  line-height: 0rem;
+  line-height: 2rem;
 }
 
 /* General Table Styling */
