@@ -14,9 +14,9 @@
 }
 
 .table-container {
-  margin: 5px 0;
+  margin: 0px 0;
   overflow: auto;
-  padding: 10px;
+
   white-space: normal;
 }
 .mathbox {
