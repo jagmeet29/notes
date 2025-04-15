@@ -38,30 +38,41 @@
         $$ where $G(x)$ is the generative function, $x$ is a variable, and $a_n$
         are the coefficients of the series.
       </p>
-      <table>
-        <tr>
-          <th>Aspect</th>
-          <th>Arithmetic Progression</th>
-          <th>Geometric Progression</th>
-        </tr>
-        <tr>
-          <td>General Term Formula</td>
-          <td>$T_n = a + (n-1)d$</td>
-          <td>$T_n = a \cdot r^{n-1}$</td>
-        </tr>
-        <tr>
-          <td>Sum of First $n$ Terms</td>
-          <td>
-            $S_n = \frac{n}{2}[2a + (n-1)d]$ or $S_n = \frac{n}{2}(a + \ell)$
-          </td>
-          <td>$S_n = a\left(\frac{1 - r^n}{1 - r}\right)$ (for $r \neq 1$)</td>
-        </tr>
-        <tr>
-          <td>Infinite Series (if applicable)</td>
-          <td>Not applicable</td>
-          <td>$S_\infty = \frac{a}{1 - r}$ (if $r<1$)</td>
-        </tr>
-      </table>
+      <div
+        style="
+          margin: 5px 0;
+          overflow: auto;
+          padding: 10px;
+          white-space: normal;
+        "
+      >
+        <table>
+          <tr>
+            <th>Aspect</th>
+            <th>Arithmetic Progression</th>
+            <th>Geometric Progression</th>
+          </tr>
+          <tr>
+            <td>General Term Formula</td>
+            <td>$T_n = a + (n-1)d$</td>
+            <td>$T_n = a \cdot r^{n-1}$</td>
+          </tr>
+          <tr>
+            <td>Sum of First $n$ Terms</td>
+            <td>
+              $S_n = \frac{n}{2}[2a + (n-1)d]$ or $S_n = \frac{n}{2}(a + \ell)$
+            </td>
+            <td>
+              $S_n = a\left(\frac{1 - r^n}{1 - r}\right)$ (for $r \neq 1$)
+            </td>
+          </tr>
+          <tr>
+            <td>Infinite Series (if applicable)</td>
+            <td>Not applicable</td>
+            <td>$S_\infty = \frac{a}{1 - r}$ (if $r<1$)</td>
+          </tr>
+        </table>
+      </div>
       <h4>Examples:</h4>
       <ol>
         <li>
@@ -134,18 +145,19 @@
         </li>
       </ol>
       <hr />
+      <div class="mathbox" style="background-color: aliceblue">
+        <p>
+          $(2) \rightarrow$ Multiply $(1)$ both sides by $x$ <br />
+          $(3) \rightarrow$ Subtract $(1)\&(2)$ <br />
+          $(4) \rightarrow$ Apply GP formula
+        </p>
 
-      <p>
-        $(2) \rightarrow$ Multiply $(1)$ both sides by $x$ <br />
-        $(3) \rightarrow$ Subtract $(1)\&(2)$ <br />
-        $(4) \rightarrow$ Apply GP formula
-      </p>
-
-      $$\begin{array}{cccc} \\ \text{sequence: }&1,&2,&3,&4\dots \ or \
-      a_{k}=k+1\\ G(x)= &1.x^{0}+&2.x^{1}+&3.x^{2}+&4.x^{3}\dots\leftarrow
-      \text{(1)} \\ xG(x)=&&x+&2.x^{2}+&3x^{3}\dots\leftarrow \text{(2)} \\
-      (1-x)G(x)=&1+&x+&x^{2}+&x^{3}\dots \leftarrow \text{(3)} \\
-      =\frac{1}{(1-x)^{2}} \end{array}$$
+        $$\begin{array}{cccc} \\ \text{sequence: }&1,&2,&3,&4\dots \ or \
+        a_{k}=k+1\\ G(x)= &1.x^{0}+&2.x^{1}+&3.x^{2}+&4.x^{3}\dots\leftarrow
+        \text{(1)} \\ xG(x)=&&x+&2.x^{2}+&3x^{3}\dots\leftarrow \text{(2)} \\
+        (1-x)G(x)=&1+&x+&x^{2}+&x^{3}\dots \leftarrow \text{(3)} \\
+        =\frac{1}{(1-x)^{2}} \end{array}$$
+      </div>
       <hr />
       <h2>Important for Representing series in Generative Function</h2>
       <p>
