@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Markdown to HTML Converter</title>
+  </head>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      color: #771919;
+    }
+    h2 {
+      color: #19773a;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      text-align: center;
+      background-color: rgba(73, 172, 54, 0.145);
+      border-radius: 10px;
+    }
+  </style>
+  <body>
+    <div id="content"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+      fetch("1.md")
+        .then((response) => response.text())
+        .then((markdown) => {
+          document.getElementById("content").innerHTML = marked.parse(markdown);
+        })
+        .catch((error) => {
+          console.error("Error loading the markdown file:", error);
+          document.getElementById("content").innerHTML =
+            "Error loading markdown file";
+        });
+    </script>
+  </body>
+</html>
