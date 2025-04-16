@@ -29,16 +29,27 @@
     <div class="responsive-container">
       <h1 style="text-align: center">Unit 2</h1>
       <h2>Partial Fraction</h2>
-        <p>Partial fraction decomposition is a technique used to break down a complex rational function into simpler fractions. This is particularly useful in calculus for integration. The basic idea is to express a given rational function as a sum of simpler fractions.</p>
-       
-        <p>For example, consider the rational function:</p>
-        <p>$$ \frac{2x + 3}{(x - 1)(x^2 + 1)} $$</p>
-        <p>We can decompose it as follows:</p>
-        <p>$$ \frac{2x + 3}{(x - 1)(x^2 + 1)} = \frac{A}{x - 1} + \frac{Bx + C}{x^2 + 1} $$</p>
-        <p>where A, B, and C are constants to be determined.</p>
+      <p>
+        Partial fraction decomposition is a technique used to break down a
+        complex rational function into simpler fractions. This is particularly
+        useful in calculus for integration. The basic idea is to express a given
+        rational function as a sum of simpler fractions.
+      </p>
 
-      <h3>Let's explore three alternative methods for partial fraction decomposition using the example:</h3>
+      <p>For example, consider the rational function:</p>
+      <p>$$ \frac{2x + 3}{(x - 1)(x^2 + 1)} $$</p>
+      <p>We can decompose it as follows:</p>
+      <p>
+        $$ \frac{2x + 3}{(x - 1)(x^2 + 1)} = \frac{A}{x - 1} + \frac{Bx + C}{x^2
+        + 1} $$
+      </p>
+      <p>where A, B, and C are constants to be determined.</p>
+
       <div class="mathbox">
+        <h3>
+          Let's explore three alternative methods for partial fraction
+          decomposition using the example:
+        </h3>
         <p><strong>Decompose $$ \frac{3x + 5}{x^2 + 5x + 6} $$</strong></p>
 
         <hr />
@@ -48,21 +59,30 @@
         <p>$$ x^2 + 5x + 6 = (x + 2)(x + 3) $$</p>
 
         <p><strong>Step 2:</strong> Express as partial fractions:</p>
-        <p>$$ \frac{3x + 5}{(x + 2)(x + 3)} = \frac{A}{x + 2} + \frac{B}{x + 3} $$</p>
+        <p>
+          $$ \frac{3x + 5}{(x + 2)(x + 3)} = \frac{A}{x + 2} + \frac{B}{x + 3}
+          $$
+        </p>
 
-        <p><strong>Step 3:</strong> Multiply both sides by $$(x + 2)(x + 3)$$:</p>
+        <p>
+          <strong>Step 3:</strong> Multiply both sides by $$(x + 2)(x + 3)$$:
+        </p>
         <p>$$ 3x + 5 = A(x + 3) + B(x + 2) $$</p>
 
         <p><strong>Step 4:</strong> Substitute roots of the denominator:</p>
         <ul>
-          <li>Let $$ x = -2 $$:
-            $$ 3(-2) + 5 = A(1) \implies -1 = A $$</li>
-          <li>Let $$ x = -3 $$:
-            $$ 3(-3) + 5 = B(-1) \implies -4 = -B \implies B = 4 $$</li>
+          <li>Let $$ x = -2 $$: $$ 3(-2) + 5 = A(1) \implies -1 = A $$</li>
+          <li>
+            Let $$ x = -3 $$: $$ 3(-3) + 5 = B(-1) \implies -4 = -B \implies B =
+            4 $$
+          </li>
         </ul>
 
         <p><strong>Result:</strong></p>
-        <p>$$ \frac{3x + 5}{(x + 2)(x + 3)} = \frac{-1}{x + 2} + \frac{4}{x + 3} $$</p>
+        <p>
+          $$ \frac{3x + 5}{(x + 2)(x + 3)} = \frac{-1}{x + 2} + \frac{4}{x + 3}
+          $$
+        </p>
 
         <hr />
 
@@ -71,18 +91,21 @@
         <p><strong>Step 4:</strong> Expand the right-hand side:</p>
         <p>$$ 3x + 5 = (A + B)x + (3A + 2B) $$</p>
 
-        <p><strong>Step 5:</strong> Equate coefficients of $$x$$ and constants:</p>
+        <p>
+          <strong>Step 5:</strong> Equate coefficients of $$x$$ and constants:
+        </p>
         <ul>
-          <li>Coefficient of $$x$$:
-            $$ A + B = 3 $$</li>
-          <li>Constant term:
-            $$ 3A + 2B = 5 $$</li>
+          <li>Coefficient of $$x$$: $$ A + B = 3 $$</li>
+          <li>Constant term: $$ 3A + 2B = 5 $$</li>
         </ul>
 
         <p><strong>Step 6:</strong> Solve the system:</p>
         <ul>
-          <li>From $$ A = 3 - B $$, substitute into the second equation:
-            $$ 3(3 - B) + 2B = 5 \implies 9 - 3B + 2B = 5 \implies -B = -4 \implies B = 4 $$</li>
+          <li>
+            From $$ A = 3 - B $$, substitute into the second equation: $$ 3(3 -
+            B) + 2B = 5 \implies 9 - 3B + 2B = 5 \implies -B = -4 \implies B = 4
+            $$
+          </li>
           <li>Then $$ A = 3 - 4 = -1 $$.</li>
         </ul>
 
@@ -94,10 +117,16 @@
         <p><strong>Step 1:</strong> Factor the denominator:</p>
         <p>$$ (x + 2)(x + 3) $$</p>
 
-        <p><strong>Step 2:</strong> Find $$A$$ by "covering" $$(x + 2)$$ and substituting $$x = -2$$:</p>
+        <p>
+          <strong>Step 2:</strong> Find $$A$$ by "covering" $$(x + 2)$$ and
+          substituting $$x = -2$$:
+        </p>
         <p>$$ A = \frac{3(-2) + 5}{(-2) + 3} = \frac{-6 + 5}{1} = -1 $$</p>
 
-        <p><strong>Step 3:</strong> Find $$B$$ by "covering" $$(x + 3)$$ and substituting $$x = -3$$:</p>
+        <p>
+          <strong>Step 3:</strong> Find $$B$$ by "covering" $$(x + 3)$$ and
+          substituting $$x = -3$$:
+        </p>
         <p>$$ B = \frac{3(-3) + 5}{(-3) + 2} = \frac{-9 + 5}{-1} = 4 $$</p>
 
         <p><strong>Result:</strong> Same as above.</p>
@@ -106,13 +135,21 @@
 
         <h4>When to Use Each Method:</h4>
         <ul>
-          <li><strong>Substitution:</strong> Best for distinct linear factors.</li>
-          <li><strong>Equating Coefficients:</strong> Works for all cases (even repeated/quadratic factors).</li>
+          <li>
+            <strong>Substitution:</strong> Best for distinct linear factors.
+          </li>
+          <li>
+            <strong>Equating Coefficients:</strong> Works for all cases (even
+            repeated/quadratic factors).
+          </li>
           <li><strong>Cover-Up:</strong> Quick trick for linear factors.</li>
         </ul>
 
         <p>Final decomposed form:</p>
-        <p>$$ \frac{3x + 5}{(x + 2)(x + 3)} = \frac{-1}{x + 2} + \frac{4}{x + 3} $$</p>
+        <p>
+          $$ \frac{3x + 5}{(x + 2)(x + 3)} = \frac{-1}{x + 2} + \frac{4}{x + 3}
+          $$
+        </p>
 
         <hr />
       </div>

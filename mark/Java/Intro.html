@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Java Introduction</title>
+<link rel="stylesheet" href="../css/styles.css" />
+<link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Configure MathJax to use $...$ and \( ... \) for inline math -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+        },
+      };
+    </script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+</head>
+<body>
+<div class="responsive-container">
+<h1 style="text-align: center;">Java Introduction</h1>
+
+<p>Here's a simple Java program to get you started:</p>
+<div class="codediv">
+<pre><code>public class Main {
+        public static void main(String[] args) {
+        System.out.println("Hello Word");
+        }
+}
+</code></pre>
+</div>
+
+
+<p>Every line of code in Java must be inside a <code>class</code>.<br>
+Class name should always start with an upper case letter.<br>
+Here class name is <code>Main</code>.<br>
+The name of the java file <b>must match</b> the class name. The java file has extension .java<br>
+Every program must contain the <code>main</code> method.</p>
+
+<h3><code>public class Main {</code></h3>
+
+<p><b>public</b>: This is an access modifier.</p>
+<p><b>class</b>: This keyword is used to declare a class in Java.</p>
+<p><b>Main</b>: This is the name of the class.</p>
+
+<h3><code>public static void main(String[] args) {</code></h3>
+
+<p><b>public</b>: This is an access modifier.</p>
+<p><b>static</b>: This means that the method belongs to the class rather than instances of the class. It can be
+called without creating an object of the class. <a href="https://www.geeksforgeeks.org/java-static-keyword/">[
+more about static]</a></p>
+<p><b>void</b>: This indicates that the method does not return any value. Also the *default return type is
+int*.</p>
+<p><b>main</b>: This is a special name recognized by the JVM as the entry point for any standalone Java
+application. When you run a Java program, execution starts from this method.</p>
+<p><b>String[] args</b>: This parameter allows you to pass command-line arguments to your program.</p>
+
+<h3><code>System.out.println("hello Word");</code></h3>
+
+<p><code>System</code> is the built in java class that contain useful members such as <code>out</code> which is
+short for "output".</p>
+<p>The <code>println()</code> method, short for "print line", is used to print a value to the screen (or a
+file).</p>
+<p>Each code statement must end with a semicolon (<code>;</code>).</p>
+</div>
+</body>
+</html>
