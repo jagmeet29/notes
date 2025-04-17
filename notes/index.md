@@ -1,1 +1,1 @@
-!(hi)[D:\my\Whiteboards\study\notes\notes\maths.md]
+!(hi)[D:\my\Whiteboards\study\notes\maths.md]
