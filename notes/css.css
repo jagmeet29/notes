@@ -2,7 +2,7 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif,lora,Arial, sans-serif;
     line-height: 1.6;
     padding: 20px;
-
+}
   blockquote {
     margin: 1em 0;
     padding-left: 1em;
@@ -28,13 +28,15 @@ body {
   th {
     background-color: #f2f2f2;
   }
-  small {
-    color: #666;
-  }
+  
   #container{
     margin:  0px 10px 0px 10px;
     width: 70%;
     margin: 0 auto; /* Center the container */
+  }
+  a{
+    color: #007BFF; /* Bootstrap primary color for links */
+    text-decoration: none; /* Remove underline from links */
   }
 
   @media (pointer: coarse) or (max-width: 408px) {
@@ -47,5 +49,16 @@ body {
       margin: 0px 1px 0px 1px;
     }
   }
-
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: black;
+      color: white;
+    }
+    blockquote {
+      margin: 1em 0;
+      padding-left: 1em;
+      border-left: 3px solid #ccc;
+      color: #fffcfc;
+    }
+  }
   
