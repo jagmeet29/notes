@@ -1,0 +1,47 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif,lora,Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+  }
+  blockquote {
+    margin: 1em 0;
+    padding-left: 1em;
+    border-left: 3px solid #ccc;
+    color: #555;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+  }
+  .table-container {
+  width: 100%; /* Ensure the container takes full width */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+}
+
+  th, td {
+    border: 1px solid #999;
+    padding: 0.5em;
+    text-align: left;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+  small {
+    color: #666;
+  }
+  #container{
+    margin:  0px 10px 0px 10px;
+  }
+  @media (pointer: coarse) {
+  /* Styles for mobile devices */
+    body {
+      font-size: 1em; /* Increase font size for better readability on mobile */
+    }
+    #container {
+      width: 100%; /* Make container full width on mobile */
+     
+      
+    }
+  }
