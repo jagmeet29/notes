@@ -11,6 +11,7 @@
         },
       };
     </script>
+
   <style>
     body {
       font-family: Georgia, 'Times New Roman', Times, serif,lora,Arial, sans-serif;
@@ -39,7 +40,11 @@
     small {
       color: #666;
     }
+    #container{
+      margin:  0px auto; width: 800px;
+    }
   </style>
+  <div id="container">
 <h1>Graph Terminology </h1>
 
 <h4>Adjacent Vertices (or Neighbors)</h4>
@@ -50,5 +55,13 @@
 
 <ul><li>When an edge $e$ connects both $u$ and $v$, we $e$ incident with $u$ and $v$.</li><li>Being "incident" means that the edge touches or connects the respective vertices.</li></ul>
 
+<h4>Neighborhood of a vertex</h4>
 
+<p>The neighborhood of a vertex $v$ is written as $N(v)$, is simply the set of all vertices that are directly connected to $v$ by an edge. These vertices are called neighbors of $v$.</p>
+
+<h5>Example</h5>
+
+$N(A) = \{B,C\}$ - A's neighbors are B and C
+
+$N(B) = \{A,D\}$ - B's neighbors
 
