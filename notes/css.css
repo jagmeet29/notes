@@ -42,7 +42,7 @@ body {
     }
     #container {
       width: 100%; /* Make container full width on mobile */
-     
+      margin:  0px 1px 0px 1px;
       
     }
   }
