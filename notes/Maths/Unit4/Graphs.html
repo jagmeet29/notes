@@ -11,7 +11,9 @@
       },
     };
   </script>
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
 <style>
   body {
     font-family: Georgia, 'Times New Roman', Times, serif,lora,Arial, sans-serif;
@@ -41,11 +43,23 @@
     color: #666;
   }
   #container{
-    margin:  0px auto; width: 800px;
+    margin:  0px 10px 0px 10px;
   }
+  @media (pointer: coarse) {
+  /* Styles for mobile devices */
+    body {
+      font-size: 1em; /* Increase font size for better readability on mobile */
+    }
+    #container {
+      width: 100%; /* Make container full width on mobile */
+     
+      
+    }
+  }
+
 </style>
 <div id="container">
-<h1>Graph</h1>
+  <h1>Graph</h1>
 
 <p>A graph is a mathematical structure used to represent pairwise structure between objects.</p>
 
@@ -123,3 +137,4 @@
     </tr>
   </tbody>
 </table>
+</div>

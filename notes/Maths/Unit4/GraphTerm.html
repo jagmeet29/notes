@@ -1,50 +1,64 @@
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
-    <script>
-      window.MathJax = {
-        tex: {
-          inlineMath: [
-            ["$", "$"],
-            ["\\(", "\\)"],
-          ],
-        },
-      };
-    </script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+    };
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
+
+<style>
+  body {
+    font-family: Georgia, 'Times New Roman', Times, serif,lora,Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+  }
+  blockquote {
+    margin: 1em 0;
+    padding-left: 1em;
+    border-left: 3px solid #ccc;
+    color: #555;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+  }
+  th, td {
+    border: 1px solid #999;
+    padding: 0.5em;
+    text-align: left;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+  small {
+    color: #666;
+  }
+  #container{
+    margin:  0px 10px 0px 10px;
+  }
+  @media (pointer: coarse) {
+  /* Styles for mobile devices */
     body {
-      font-family: Georgia, 'Times New Roman', Times, serif,lora,Arial, sans-serif;
-      line-height: 1.6;
-      padding: 20px;
+      font-size: 1em; /* Increase font size for better readability on mobile */
     }
-    blockquote {
-      margin: 1em 0;
-      padding-left: 1em;
-      border-left: 3px solid #ccc;
-      color: #555;
+    #container {
+      width: 100%; /* Make container full width on mobile */
+     
+      
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1em;
-    }
-    th, td {
-      border: 1px solid #999;
-      padding: 0.5em;
-      text-align: left;
-    }
-    th {
-      background-color: #f2f2f2;
-    }
-    small {
-      color: #666;
-    }
-    #container{
-      margin:  0px auto; width: 800px;
-    }
-  </style>
-  <div id="container">
+  }
+
+</style>
+<div id="container">
 <h1>Graph Terminology </h1>
 
 <h4>Adjacent Vertices (or Neighbors)</h4>
