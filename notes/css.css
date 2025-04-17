@@ -2,7 +2,7 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif,lora,Arial, sans-serif;
     line-height: 1.6;
     padding: 20px;
-  }
+
   blockquote {
     margin: 1em 0;
     padding-left: 1em;
@@ -33,16 +33,19 @@ body {
   }
   #container{
     margin:  0px 10px 0px 10px;
+    width: 70%;
+    margin: 0 auto; /* Center the container */
   }
 
-  @media (pointer: coarse) {
-  /* Styles for mobile devices */
+  @media (pointer: coarse) or (max-width: 408px) {
+    /* Styles for touch devices and smaller screens */
     body {
-      font-size: 1em; /* Increase font size for better readability on mobile */
+      font-size: 1.2em; /* Increase font size for better readability on touch devices */
     }
     #container {
-      width: 100%; /* Make container full width on mobile */
-      margin:  0px 1px 0px 1px;
-      
+      width: 100%; /* Make container full width on touch devices */
+      margin: 0px 1px 0px 1px;
     }
   }
+
+  
