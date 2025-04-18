@@ -13,12 +13,12 @@
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="../../css.css">
+<link rel="stylesheet" href="../css.css">
 <div id="container">
-  <h2>Melay code for 101 Overlaping</h2>
+  <h1>Melay code for 101 Overlaping</h1>
 
 
-  <div class="rescontainer">
+  <div class="rescontainer rescode">
     <pre>
     <code>
 module melay(x,clk,out);
@@ -61,10 +61,10 @@ endmodule
 
   <h2>Testbench</h2>
 
-  <div class="res container">
+  <div class="rescontainer rescode">
     <pre>
     <code>
-    module melaytest;
+module melaytest;
 reg x,clk;
 wire out;
 melay x1(x,clk,out);
@@ -74,7 +74,17 @@ always
 #1 clk=~clk;
 initial
 begin
-x=0;#2 x=1;#2 x=0;#2 x=1;#2 x=1;#2 x=0;#2 x=1;#2 x=0;#2 x=1;#2 x=0;#2 x=1;#2 x=1;#2 x=0;# 2 x=1;#2 x=0;#2 x=1;#2 x=0;#2 x=0;#2 x=1;#2 x=1;#2 x=1;#2
+x=0;#2 x=1;
+#2 x=0;#2 x=1;
+#2 x=1;#2 x=0;
+#2 x=1;#2 x=0;
+#2 x=1;#2 x=0;
+#2 x=1;#2 x=1;
+#2 x=0;# 2 x=1;
+#2 x=0;#2 x=1;
+#2 x=0;#2 x=0;
+#2 x=1;#2 x=1;
+#2 x=1;#2
 $stop;
 end
 endmodule</code></pre>

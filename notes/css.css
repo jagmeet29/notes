@@ -15,9 +15,13 @@ body {
     margin-top: 1em;
   }
   .rescontainer {
-  width: 100%; /* Ensure the container takes full width */
   overflow-x: auto; /* Enable horizontal scrolling */
   -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+}
+.rescode{
+  background-color: #dcb7d733;
+  border-radius: 10px;
+  padding: 0px 15px ;
 }
 
   th, td {
@@ -26,7 +30,7 @@ body {
     text-align: left;
   }
   th {
-    background-color: #f2f2f2;
+    background-color: #ad66663c;
   }
   
   #container{
@@ -46,7 +50,7 @@ body {
     }
     #container {
       width: 100%; /* Make container full width on touch devices */
-      margin: 0px 1px 0px 1px;
+      margin: 0px auto;
     }
   }
   @media (prefers-color-scheme: dark) {
