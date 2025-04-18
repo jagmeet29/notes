@@ -14,7 +14,7 @@ body {
     border-collapse: collapse;
     margin-top: 1em;
   }
-  .table-container {
+  .rescontainer {
   width: 100%; /* Ensure the container takes full width */
   overflow-x: auto; /* Enable horizontal scrolling */
   -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
