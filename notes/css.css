@@ -1,68 +1,104 @@
 body {
-    font-family: Georgia, 'Times New Roman', Times, serif,lora,Arial, sans-serif;
-    line-height: 1.6;
-    padding: 20px;
+  font-family: Georgia, "Times New Roman", Times, serif, lora, Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
 }
+blockquote {
+  margin: 1em 0;
+  padding-left: 1em;
+  border-left: 3px solid #ccc;
+  color: #555;
+}
+
+.rescontainer {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+}
+.rescode {
+  background-color: #ad8c664a;
+  border-radius: 10px;
+  padding: 0px 15px;
+}
+.resques {
+  background-color: #a966ad4a;
+  border-radius: 10px;
+  padding: 15px 15px;
+}
+.resques img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block; /* Make it a block element */
+  margin: 0 auto; /* Auto margins will now work */
+}
+table {
+  width: 100%;
+  border-collapse: separate; /* Changed from collapse to allow for border-radius */
+  border-spacing: 0;
+  margin-top: 1em;
+  border-radius: 10px;
+  overflow: hidden; /* Ensures the content respects the rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+}
+
+th, td {
+  border: none; /* Remove individual borders */
+  border-bottom: 1px solid rgba(153, 153, 153, 0.3); /* Lighter, semi-transparent border */
+  padding: 0.8em 1em; /* More generous padding */
+  text-align: left;
+}
+
+/* Remove bottom border from last row */
+tr:last-child td {
+  border-bottom: none;
+}
+
+th {
+  background-color: #ad66662c; /* Keeping your color */
+  font-weight: 600;
+  color: #333;
+}
+
+/* Optional: Add hover effect for better UX */
+tbody tr:hover {
+  background-color: rgba(173, 140, 102, 0.1);
+  transition: background-color 0.2s ease;
+}
+
+/* Optional: Zebra striping for better readability */
+tbody tr:nth-child(even) {
+  background-color: rgba(173, 140, 102, 0.05);
+}
+
+#container {
+  margin: 0px 10px 0px 10px;
+  width: 70%;
+  margin: 0 auto; /* Center the container */
+}
+a {
+  color: #007bff; /* Bootstrap primary color for links */
+  text-decoration: none; /* Remove underline from links */
+}
+
+@media (pointer: coarse) or (max-width: 408px) {
+  /* Styles for touch devices and smaller screens */
+  body {
+    font-size: 1.2em; /* Increase font size for better readability on touch devices */
+  }
+  #container {
+    width: 100%; /* Make container full width on touch devices */
+    margin: 0px auto;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: white;
+  }
   blockquote {
     margin: 1em 0;
     padding-left: 1em;
     border-left: 3px solid #ccc;
-    color: #555;
+    color: #fffcfc;
   }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1em;
-  }
-  .rescontainer {
-  overflow-x: auto; /* Enable horizontal scrolling */
-  -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
 }
-.rescode{
-  background-color: #ad8c664a;
-  border-radius: 10px;
-  padding: 0px 15px ;
-}
-
-  th, td {
-    border: 1px solid #999;
-    padding: 0.5em;
-    text-align: left;
-  }
-  th {
-    background-color: #ad66662c;
-  }
-  
-  #container{
-    margin:  0px 10px 0px 10px;
-    width: 70%;
-    margin: 0 auto; /* Center the container */
-  }
-  a{
-    color: #007BFF; /* Bootstrap primary color for links */
-    text-decoration: none; /* Remove underline from links */
-  }
-
-  @media (pointer: coarse) or (max-width: 408px) {
-    /* Styles for touch devices and smaller screens */
-    body {
-      font-size: 1.2em; /* Increase font size for better readability on touch devices */
-    }
-    #container {
-      width: 100%; /* Make container full width on touch devices */
-      margin: 0px auto;
-    }
-  }
-  @media (prefers-color-scheme: dark) {
-    body {
-      background-color: black;
-      color: white;
-    }
-    blockquote {
-      margin: 1em 0;
-      padding-left: 1em;
-      border-left: 3px solid #ccc;
-      color: #fffcfc;
-    }
-  }
-  
