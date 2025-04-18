@@ -1,54 +1,91 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+></script>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+  };
 </script>
-  <script>
-    window.MathJax = {
-      tex: {
-        inlineMath: [
-          ["$", "$"],
-          ["\\(", "\\)"],
-        ],
-      },
-    };
-  </script>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<link rel="stylesheet" href="../../css.css">
+<link rel="stylesheet" href="../../css.css" />
 <div id="container">
-<h1>Graph Terminology </h1>
+  <h1>Graph Terminology</h1>
 
-<h4>Adjacent Vertices (or Neighbors)</h4>
+  <h4>Adjacent Vertices (or Neighbors)</h4>
 
-<ul><li>If there is a edge $e$ that connects vertices $u$ and $v$, then $u$ and $v$  are said to adjacent.</li><li>This simply means that $u$ and $v$ are directly connected.</li></ul>
-
-<h4>Incidence</h4>
-
-<ul><li>When an edge $e$ connects both $u$ and $v$, we $e$ incident with $u$ and $v$.</li><li>Being "incident" means that the edge touches or connects the respective vertices.</li></ul>
-
-<h4>Neighborhood of a vertex</h4>
-
-<ul>
-<li>The neighborhood of a vertex $v$ is written as $N(v)$, is simply the set of all vertices that are directly connected to $v$ by an edge. </li><li>These vertices are called neighbors of $v$.</li></ul>
-
-<h5>Example</h5>
-
-<p>$N(A) = \{B,C\}$ - A's neighbors are B and C<br>$N(B) = \{A,D\}$ - B's neighbors are A and D</p>
-
-<h4>Neighborhood of a set of vertices</h4>
-
-<ul><li>The neighborhood of a set of vertices is all the vertices that connect directly to at least one vertex in your set.</li><li>
-
-Think of it this way: if you have a group of people, their collective neighborhood includes everyone who is friend with at lest one person in the group.</li><li>
-
-$N(A) =$ the union of all the neighborhoods of individual vertices in A.</li></ul>
-
-<h5>Example</h5>
-
-<p>$N(\{A,B\}) = \{A,B,C,D\}$ </p>
-
-<h4>Degree of vertex</h4>
-
-<ul> <li> It  is the number of edges incident on the vertex.</li><li> Except loop contributes twice to the degree of the vertex.</li><li>The degree of the vertex is denoted by $deg(v)$.
+  <ul>
+    <li>
+      If there is a edge $e$ that connects vertices $u$ and $v$, then $u$ and
+      $v$ are said to adjacent.
     </li>
-</ul>
+    <li>This simply means that $u$ and $v$ are directly connected.</li>
+  </ul>
 
+  <h4>Incidence</h4>
+
+  <ul>
+    <li>
+      When an edge $e$ connects both $u$ and $v$, we $e$ incident with $u$ and
+      $v$.
+    </li>
+    <li>
+      Being "incident" means that the edge touches or connects the respective
+      vertices.
+    </li>
+  </ul>
+
+  <h4>Neighborhood of a vertex</h4>
+
+  <ul>
+    <li>
+      The neighborhood of a vertex $v$ is written as $N(v)$, is simply the set
+      of all vertices that are directly connected to $v$ by an edge.
+    </li>
+    <li>These vertices are called neighbors of $v$.</li>
+  </ul>
+
+  <h5>Example</h5>
+
+  <p>
+    $N(A) = \{B,C\}$ - A's neighbors are B and C<br />$N(B) = \{A,D\}$ - B's
+    neighbors are A and D
+  </p>
+
+  <h4>Neighborhood of a set of vertices</h4>
+
+  <ul>
+    <li>
+      The neighborhood of a set of vertices is all the vertices that connect
+      directly to at least one vertex in your set.
+    </li>
+    <li>
+      Think of it this way: if you have a group of people, their collective
+      neighborhood includes everyone who is friend with at lest one person in
+      the group.
+    </li>
+    <li>
+      $N(A) =$ the union of all the neighborhoods of individual vertices in A.
+    </li>
+  </ul>
+
+  <h5>Example</h5>
+
+  <p>$N(\{A,B\}) = \{A,B,C,D\}$</p>
+
+  <h4>Degree of vertex</h4>
+
+  <ul>
+    <li>It is the number of edges incident on the vertex.</li>
+    <li>Except loop contributes twice to the degree of the vertex.</li>
+    <li>The degree of the vertex is denoted by $deg(v)$.</li>
+  </ul>
+</div>
