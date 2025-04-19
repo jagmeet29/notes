@@ -13,6 +13,34 @@
       ],
     },
   };
+</script><script>
+  // JavaScript to toggle visibility of answer content
+  document.addEventListener("DOMContentLoaded", function () {
+    // First, hide all answer contents initially
+    const answerContents = document.querySelectorAll(".ans-content");
+    answerContents.forEach((content) => {
+      content.style.display = "none";
+    });
+
+    // Add click event listeners to all answer buttons
+    const answerButtons = document.querySelectorAll(".ans-button");
+    answerButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        // Find the parent div first
+        const parentDiv = this.closest(".res-ques");
+
+        // Then find the answer content within this parent
+        const answerContent = parentDiv.querySelector(".ans-content");
+
+        // Toggle its visibility
+        if (answerContent.style.display === "none") {
+          answerContent.style.display = "block";
+        } else {
+          answerContent.style.display = "none";
+        }
+      });
+    });
+  });
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -108,12 +136,27 @@
     <li>In a directional graph, the edges have a direction.</li>
     <li>The direction is indicated by an arrow.</li>
     <li>In a directional graph, the edges are called arcs.</li>
-    
-    <li>In a directional graph, the degree of a vertex is divided into two
-      parts:</li><ol>
-    <li>In-degree $deg^-(v)$: the number of arcs directed towards the vertex.</li>
-    <li>Out-degree $deg^+(v)$: the number of arcs directed away from the vertex.</li></ol>
-    <li>Loop at a vertex contributes 1 to in-degree and 1 to out-degree.</li></ul>
-  <div class="res-container res-ques">
-    <img src="notes/Maths/Unit4/image.png"></div>
+
+    <li>
+      In a directional graph, the degree of a vertex is divided into two parts:
+    </li>
+    <ol>
+      <li>
+        In-degree $deg^-(v)$: the number of arcs directed towards the vertex.
+      </li>
+      <li>
+        Out-degree $deg^+(v)$: the number of arcs directed away from the vertex.
+      </li>
+    </ol>
+    <li>Loop at a vertex contributes 1 to in-degree and 1 to out-degree.</li>
+  </ul>
+  <div class="res-ques">
+    <h3>Find the in-degree and out-degree of each vertex,</h3>
+    <img src="2.png"/>
+    <button class="ans-button" style="margin: 10px auto;">Show Answer</button>
+<div class="ans-content">
+<p>In-degree: a=2, b=2, c=3, d=2, e=3<br />Out-degree: a=4, b=1, c=2, d=2, e=3</p>
+</div>
+
+</div>
 </div>
