@@ -10,21 +10,21 @@ blockquote {
   color: #555;
 }
 
-.rescontainer {
+.res-container {
   overflow-x: auto; /* Enable horizontal scrolling */
   -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
 }
-.rescode {
+.res-code {
   background-color: #ad8c664a;
   border-radius: 10px;
   padding: 0px 15px;
 }
-.resques {
+.res-ques {
   background-color: #a966ad4a;
   border-radius: 10px;
   padding: 15px 15px;
 }
-.resques img {
+.res-ques img {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
@@ -41,7 +41,8 @@ table {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
 }
 
-th, td {
+th,
+td {
   border: none; /* Remove individual borders */
   border-bottom: 1px solid rgba(153, 153, 153, 0.3); /* Lighter, semi-transparent border */
   padding: 0.8em 1em; /* More generous padding */
@@ -70,6 +71,25 @@ tbody tr:nth-child(even) {
   background-color: rgba(173, 140, 102, 0.05);
 }
 
+button {
+  background-color: #ffffff; /* Keeping your color */
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  display: block; /* Make it a block element */
+  margin: 0 auto; /* Auto margins will now work */
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #f0f0f0; /* Slightly darker on hover */
+}
+button:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 0 2px rgba(173, 140, 102, 0.5); /* Custom focus outline */
+}
 #container {
   margin: 0px 10px 0px 10px;
   width: 70%;
