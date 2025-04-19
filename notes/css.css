@@ -23,11 +23,14 @@ blockquote {
   background-color: #a966ad4a;
   border-radius: 10px;
   padding: 15px 15px;
+  transform: hight 0.5em;
+  transition: transform 0.5s ease-in-out;
 }
 .res-ques img {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
+
   display: block; /* Make it a block element */
   margin: 0 auto; /* Auto margins will now work */
 }
@@ -103,7 +106,7 @@ a {
 @media (pointer: coarse) or (max-width: 408px) {
   /* Styles for touch devices and smaller screens */
   body {
-    font-size: 1.2em; /* Increase font size for better readability on touch devices */
+    font-size: 1em; /* Increase font size for better readability on touch devices */
   }
   #container {
     width: 100%; /* Make container full width on touch devices */
