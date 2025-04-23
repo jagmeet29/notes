@@ -1,8 +1,14 @@
 body {
-  font-family: Georgia, "Times New Roman", Times, serif, lora, Arial, sans-serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   line-height: 1.6;
   padding: 20px;
+  margin: 0;
+  /* Enable hardware acceleration */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
+
 blockquote {
   margin: 1em 0;
   padding-left: 1em;
@@ -13,135 +19,212 @@ blockquote {
 .res-container {
   overflow-x: auto; /* Enable horizontal scrolling */
   -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+  /* Optimize rendering performance */
+  will-change: transform;
+  /* Create a new stacking context for better compositing */
+  isolation: isolate;
 }
+
 .res-code {
-  background-color: #ad8c664a;
+  background-color: rgba(173, 140, 102, 0.29);
   border-radius: 10px;
   padding: 0px 15px;
 }
+
 .res-ques {
-  background-color: #a69f1d46;
+  background-color: rgba(166, 159, 29, 0.27);
   border-radius: 10px;
-  padding: 15px 15px;
-  transform: hight 0.5em;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
-  transition: transform 0.5s ease-in-out;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  /* Use transform instead of height for animations */
+  transform: translateY(0);
+  transition: transform 0.3s ease-out;
+  /* Hint at future transforms for smoother animations */
+  will-change: transform;
 }
+
 .res-ques img {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
-
-  display: block; /* Make it a block element */
-  margin: 0 auto; /* Auto margins will now work */
+  display: block;
+  margin: 0 auto;
 }
+
 table {
   width: 100%;
-  border-collapse: separate; /* Changed from collapse to allow for border-radius */
+  border-collapse: separate;
   border-spacing: 0;
   margin-top: 1em;
   border-radius: 10px;
-  overflow: hidden; /* Ensures the content respects the rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
-th,
-td {
-  border: none; /* Remove individual borders */
-  border-bottom: 1px solid rgba(153, 153, 153, 0.3); /* Lighter, semi-transparent border */
-  padding: 0.8em 1em; /* More generous padding */
+th, td {
+  border: none;
+  border-bottom: 1px solid rgba(153, 153, 153, 0.3);
+  padding: 0.8em 1em;
   text-align: left;
 }
 
-/* Remove bottom border from last row */
 tr:last-child td {
   border-bottom: none;
 }
 
 th {
-  background-color: #ad66662c; /* Keeping your color */
+  background-color: rgba(173, 102, 102, 0.17);
   font-weight: 600;
   color: #333;
 }
 
-/* Optional: Add hover effect for better UX */
-
-/* Optional: Zebra striping for better readability */
 tbody tr:nth-child(even) {
   background-color: rgba(173, 140, 102, 0.05);
 }
+
 tbody tr:hover {
   background-color: rgba(173, 140, 102, 0.159);
   transition: background-color 0.2s ease;
 }
 
 button {
-  background-color: #ffffff; /* Keeping your color */
+  background-color: #ffffff;
   color: rgb(0, 0, 0);
   border: none;
   padding: 10px 20px;
   border-radius: 10px;
   cursor: pointer;
   font-size: 1em;
-  display: block; /* Make it a block element */
-  margin: 0 auto; /* Auto margins will now work */
-  transition: background-color 0.3s ease;
+  display: block;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+  /* Improve tap response on mobile */
+  touch-action: manipulation;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 button:hover {
-  background-color: #f0f0f0; /* Slightly darker on hover */
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
+
+button:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
 button:focus {
-  outline: none; /* Remove default focus outline */
-  box-shadow: 0 0 0 2px rgba(173, 140, 102, 0.5); /* Custom focus outline */
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(173, 140, 102, 0.5);
 }
+
 #container {
-  margin: 0px 10px 0px 10px;
   width: 70%;
-  margin: 0 auto; /* Center the container */
+  margin: 0 auto;
+  /* Hint to browser about layout stability */
+  contain: layout style paint;
 }
+
 a {
-  color: #007bff; /* Bootstrap primary color for links */
-  text-decoration: none; /* Remove underline from links */
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* Smooth Animation for Answer Content */
+.ans-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: max-height 0.5s ease-out, 
+              opacity 0.4s ease-out, 
+              transform 0.4s ease-out,
+              padding 0.4s ease-out;
+  padding: 0 15px;
+  box-sizing: border-box;
+  will-change: max-height, opacity, transform;
+}
+
+.ans-content.visible {
+  max-height: 1000px; /* Adjust based on your content size */
+  opacity: 1;
+  transform: translateY(0);
+  padding: 15px;
 }
 
 @media (pointer: coarse) or (max-width: 408px) {
-  /* Styles for touch devices and smaller screens */
-  body {
-    font-size: 1em; /* Increase font size for better readability on touch devices */
+  /* Reduce paint operations on mobile */
+  * {
+    -webkit-tap-highlight-color: transparent;
   }
+  
+  body {
+    font-size: 1em;
+  }
+  
   #container {
-    width: 100%; /* Make container full width on touch devices */
-    margin: 0px auto;
+    width: 95%;
+    margin: 0 auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  
+  /* Simplify flex layouts on small screens */
+  .res-container div[style="display: flex"] {
+    flex-direction: column;
+  }
+  
+  /* Optimize image loading */
+  img {
+    content-visibility: auto;
   }
 }
+
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: black;
-    color: white;
+    background-color: #121212; /* More battery-efficient than pure black */
+    color: #e0e0e0; /* Softer than pure white */
   }
+  
   table {
-    color: white;
+    color: #e0e0e0;
   }
+  
   th {
-    color: wheat;
+    color: #f5deb3; /* wheat */
   }
-
+  
   img {
     border-radius: 10px;
     padding: 5px;
   }
-  /* Optional: Zebra striping for better readability */
+  
   tbody tr:nth-child(even) {
-    background-color: rgba(178, 164, 148, 0.142);
+    background-color: rgba(178, 164, 148, 0.08);
   }
+  
   tbody tr:hover {
-    background-color: rgba(173, 140, 102, 0.296);
+    background-color: rgba(173, 140, 102, 0.15);
     transition: background-color 0.2s ease;
   }
+  
   blockquote {
-    margin: 1em 0;
-    padding-left: 1em;
-    border-left: 3px solid #ccc;
-    color: #fffcfc;
+    border-left: 3px solid #777;
+    color: #d0d0d0;
+  }
+  
+  button {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+  }
+  
+  button:hover {
+    background-color: #3a3a3a;
+  }
+  
+  .ans-content table {
+    background-color: #1e1e1e !important;
   }
 }
