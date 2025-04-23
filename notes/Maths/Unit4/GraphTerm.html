@@ -49,7 +49,7 @@
 <div id="container">
   <h1>Graph Terminology</h1>
 
-  <h4>Adjacent Vertices (or Neighbors)</h4>
+  <h3 id="one">Adjacent Vertices (or Neighbors)</h4>
 
   <ul>
     <li>
@@ -58,8 +58,17 @@
     </li>
     <li>This simply means that $u$ and $v$ are directly connected.</li>
   </ul>
+<h3>Loop</h3>
+  <ul>
+    <li>
+      A loop is an edge that connects a vertex to itself. In other words, it is
+      an edge that starts and ends at the same vertex.
+    </li>
+    <li>Loops are often represented as a circle or a curve.</li>
+    <li>Loops can be found in both directed and undirected graphs.</li>
+    </ul>
 
-  <h4>Incidence</h4>
+  <h3>Incidence</h4>
 
   <ul>
     <li>
@@ -72,7 +81,7 @@
     </li>
   </ul>
 
-  <h4>Neighborhood of a vertex</h4>
+  <h3>Neighborhood of a vertex</h4>
 
   <ul>
     <li>
@@ -89,7 +98,7 @@
     neighbors are A and D
   </p>
 
-  <h4>Neighborhood of a set of vertices</h4>
+  <h3>Neighborhood of a set of vertices</h4>
 
   <ul>
     <li>
@@ -110,20 +119,20 @@
 
   <p>$N(\{A,B\}) = \{A,B,C,D\}$</p>
 
-  <h4>Degree of vertex</h4>
+  <h3>Degree of vertex</h4>
 
   <ul>
     <li>It is the number of edges incident on the vertex.</li>
     <li>Loop contributes twice to the degree of the vertex.</li>
     <li>The degree of the vertex is denoted by $deg(v)$.</li>
   </ul>
-  <h4>Insolated vertx</h4>
+  <h3>Insolated vertx</h4>
 
   <ul>
     <li>It is a vertex of degree zero.</li>
     <li>It has no adjacent vertex.</li>
   </ul>
-  <h4>Pendent</h4>
+  <h3>Pendent</h3>
 
   <ul>
     <li>A vertex with degree one.</li>
@@ -131,22 +140,25 @@
   </ul>
   <div class="res-container res-ques">
     <img src="image-20250419043606040.png" />
+    
   </div>
-  <h3>Directional Graph</h3>
+
+  <br />
+  <hr />
+
+  <h3 id="two">Directional Graph</h3>
   <ul>
-    <li>In a directional graph, the edges have a direction.</li>
-    <li>The direction is indicated by an arrow.</li>
-    <li>In a directional graph, the edges are called arcs.</li>
+    <li>In a directional graph, the edges are called<b> arcs</b>.</li>
 
     <li>
       In a directional graph, the degree of a vertex is divided into two parts:
     </li>
     <ol>
       <li>
-        In-degree $deg^-(v)$: the number of arcs directed towards the vertex.
+      <b> In-degree $deg^-(v)$</b>: the number of arcs directed towards the vertex.
       </li>
       <li>
-        Out-degree $deg^+(v)$: the number of arcs directed away from the vertex.
+      <b>Out-degree $deg^+(v)$</b>: the number of arcs directed away from the vertex.
       </li>
     </ol>
     <li>Loop at a vertex contributes 1 to in-degree and 1 to out-degree.</li>
@@ -162,17 +174,37 @@
       </p>
     </div>
   </div>
+  <h3>Cycle</h3>
+<ul
+>  <li>
+    A cycle is a path in which the first and last vertices are the same. In
+    other words, it is a closed loop in the graph.</li>
+    <li>A path that starts and ends at the same vertex, following the direction of edges</li>
+</ul>
   <h3>Adjacent Vertex in directed graph</h3>
   <p>
     In a graph $G$ having edge $(u,v)$. $u$ is said to be adjacent to $v$ and
     $v$ is said to be adjacent to $u$.
   </p>
   <h3>Initial & Terminating vertex</h3>
-  
+  <ul>
   <li>
     The vertex $u$ is called initial vertex of $(u,v)$ and $v$ is called the
     terminating vertex or end vertex of $(u,v)$.
   </li>
 
   <li>The initial and terminating vertex of loop are same.</li>
+</ul>
+<h3>Source & Sink</h3>
+<ul>
+  <li>A vertex with in-degree 0 is called a source.</li>
+  <li>A vertex with out-degree 0 is called a sink.</li>
+</ul>
+<h3>Parallel Edges</h3>
+<ul>
+  <li>Two or more edges that connect the same pair of vertices are called
+    parallel edges.</li>
+  <li>Parallel edges are not allowed in simple graphs.</li>
+  </ul>
 </div>
+
