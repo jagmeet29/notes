@@ -1,0 +1,134 @@
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+></script>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+  };
+</script>
+<script>
+  // JavaScript to toggle visibility of answer content
+  document.addEventListener("DOMContentLoaded", function () {
+    // First, hide all answer contents initially
+    const answerContents = document.querySelectorAll(".ans-content");
+    answerContents.forEach((content) => {
+      content.style.display = "none";
+    });
+
+    // Add click event listeners to all answer buttons
+    const answerButtons = document.querySelectorAll(".ans-button");
+    answerButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        // Find the parent div first
+        const parentDiv = this.closest(".res-ques");
+
+        // Then find the answer content within this parent
+        const answerContent = parentDiv.querySelector(".ans-content");
+
+        // Toggle its visibility
+        if (answerContent.style.display === "none") {
+          answerContent.style.display = "block";
+        } else {
+          answerContent.style.display = "none";
+        }
+      });
+    });
+  });
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="stylesheet" href="../../css.css" />
+<div id="container">
+  <h1>Representation of Graph</h1>
+  <h2>Adjacency List</h2>
+  <blockquote>
+    In an adjacency list, each vertex has a list of all the vertices it is
+    adjacent to.
+  </blockquote>
+  <div class="res-container">
+    <div style="display: flex">
+      <img src="9.png" alt="Adjacency List" width="auto" height="auto" />
+      <table border="1" style="width: 20px">
+        <tr>
+          <th>vertex</th>
+          <th>adjacent vertices</th>
+        </tr>
+        <tr>
+          <td>a</td>
+          <td>b, c, e</td>
+        </tr>
+        <tr>
+          <td>b</td>
+          <td>a</td>
+        </tr>
+        <tr>
+          <td>c</td>
+          <td>a, e, d</td>
+        </tr>
+        <tr>
+          <td>d</td>
+          <td>e, c</td>
+        </tr>
+        <tr>
+          <td>e</td>
+          <td>a, c, d</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+<br>
+<div class="res-ques">
+    <h4>Find For this</h4>
+    <img src="10.png" alt="Adjacency List" width="auto" height="auto" />
+  <button class="ans-button" style="margin: 20px auto;">Answer</button>
+  <div class="ans-content"><p>In directed graph we only count the edge if vertex is <a href="GraphTerm.html#initialvertex">initial vertices</a> of edge.</p>
+    <table border="1" style="width: 20px; background-color: white;margin: 0px auto;">
+      <tr>
+        <th>vertex</th>
+        <th>adjacent vertices</th>
+      </tr>
+      <tr>
+        <td>a</td>
+        <td>b, c, d, e</td>
+      </tr>
+      <tr>
+        <td>b</td>
+        <td>b, d,</td>
+      </tr>
+      <tr>
+        <td>c</td>
+        <td>c, a, e</td>
+      </tr>
+      <tr>
+        <td>d</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>e</td>
+        <td> c, b, d </td>
+      </tr>
+      </table>
+  </div>
+  </div>
+  <h2>Adjacency Matrix</h2>
+    <blockquote>
+        In an adjacency matrix, a square matrix is used to represent the graph.
+        Each row and column of the matrix represents a vertex. The value in the
+        matrix indicates whether there is an edge between the vertices.
+    </blockquote>
+    <div class="res-container">
+        <div style="display: flex;">
+      <img src="11.png" alt="Adjacency Matrix" width="auto" height="auto" />
+    $$\begin{bmatrix}
+
+    \end{bmatrix}$$
+    </table>
+    </div>

@@ -62,9 +62,9 @@
   <p>
     <strong>Infinite graph</strong> &rarr; A graph with infinite set of vertices
     and edges.
-  </p>
 
-  <p>
+
+<br />
     <strong>Finite graph</strong> &rarr; A graph with finite set of vertices and
     edges.
   </p>
@@ -160,14 +160,27 @@
         </tr>
       </tbody>
     </table>
-
+</div>
 
 <h2>Regular Graph</h2>
 <blockquote>A regular graph is a graph in which every vertex has the same number of edges connected to it. In other words, all vertices have the same degree (the degree is the number of edges incident to a vertex).</blockquote>
 <h2>K-Regular Graph</h2>
 <blockquote>A k-regular graph is a specific type of regular graph where every vertex has exactly k edges connected to it. In other words, the degree of each vertex in the graph is k.</blockquote>
-<p>For example, a 3-regular graph is a graph where every vertex has exactly 3 edges connected to it.</p>
+<p>A complete graph with $n$ vertices is 
+  $(n-1)$-regular, since each vertex connects to all other $n-1$ vertices.<br>  If $k$ is odd, the number of vertices $n$ must be even. (By <a href="Theorems.html">Handshaking Theorem</a>) <br>Number of edges $\rightarrow \frac {n \ \times \ k}{2}$ 
+<br>For example, a 3-regular graph is a graph where every vertex has exactly 3 edges connected to it.</p>
 
+<div class="res-ques">
+
+<h4>find $k$, if k-regular graph contains 8 vertices and 12 edges.</h4>
+<button class="ans-button">Show Answer</button>
+<div class="ans-content">
+  <p>$$\begin{align*} \\
+    \sum deg(v) &= 2 \ e \\
+8 \times \ k    &= 12 \times 2 \\
+k &= 3 \end{align*}$$ Ans 12.</p>
+</div>
+</div>
 
     <br>
     <br>
@@ -180,6 +193,7 @@
       A complete graph on $n$ vertices, denoted by $K_n$, is a simple graph
       that contains exactly one edge between each pair of distinct vertices.
     </blockquote>
+    <p><b>Number of edges</b> $\rightarrow \frac {n(n-1)}{2}$ <br> <b id="kdeg">Degree</b> $\rightarrow (n-1)$ </p>
     <p>
       The graphs $K_n$, for n =1,2,3,4,5,6, are as shown. A simple graph for
       which there is at least one pair of distinct vertex not connected by an
