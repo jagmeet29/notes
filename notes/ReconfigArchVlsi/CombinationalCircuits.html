@@ -82,8 +82,59 @@
       <li>Timeless (Instantly output change as the input changes)</li>
 
   </ul>
-  <h1>Sequential Circuit</h1>
+  <center><div class="res-container" width="600" height="400" >
+ 
+    <svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+      <!-- Background -->
+      <rect width="600" height="400" fill="#f000" />
+      
+      <!-- Input signals -->
+      <line x1="50" y1="100" x2="150" y2="100" stroke="black" stroke-width="2" />
+      <polygon points="145,95 155,100 145,105" fill="black" />
+      <text x="50" y="90" font-family="Arial" font-size="14">Input Signals</text>
+      
+      <!-- Combinational Logic -->
+      <rect x="150" y="70" width="100" height="120" fill="white" stroke="black" stroke-width="2" />
+      <text x="155" y="130" font-family="Arial" font-size="14">Combinational</text>
+      <text x="175" y="150" font-family="Arial" font-size="14">Logic</text>
+      
+      <!-- Connection to memory element -->
+      <line x1="250" y1="100" x2="300" y2="100" stroke="black" stroke-width="2" />
+      <polygon points="295,95 305,100 295,105" fill="black" />
+      
+      <!-- Clock -->
+      <line x1="50" y1="250" x2="300" y2="250" stroke="black" stroke-width="2" />
+      <polygon points="295,245 305,250 295,255" fill="black" />
+      <text x="100" y="240" font-family="Arial" font-size="14">Clock</text>
+      
+      <!-- Memory Element -->
+      <rect x="300" y="70" width="120" height="200" fill="#d1e7dd" stroke="black" stroke-width="2" />
+      <text x="315" y="130" font-family="Arial" font-size="16" font-weight="bold">Memory</text>
+      <text x="315" y="150" font-family="Arial" font-size="16" font-weight="bold">Element</text>
+      <text x="325" y="180" font-family="Arial" font-size="12">(D Flip-Flop)</text>
+      
+      <!-- Output -->
+      <line x1="420" y1="100" x2="500" y2="100" stroke="black" stroke-width="2" />
+      <polygon points="495,95 505,100 495,105" fill="black" />
+      <text x="450" y="90" font-family="Arial" font-size="14">Output</text>
+      
+      <!-- Feedback path -->
+      <path d="M 420 150 L 480 150 L 480 200 L 100 200 L 100 150 L 150 150" fill="none" stroke="black" stroke-width="2" stroke-dasharray="5,5" />
+      <polygon points="145,145 155,150 145,155" fill="black" />
+      <text x="220" y="220" font-family="Arial" font-size="14" fill="#d63384">Feedback Path (State)</text>
+      
+      <!-- Next State Logic -->
+      <text x="170" y="40" font-family="Arial" font-size="14">Next State Logic</text>
+      
+      <!-- Present State -->
+      <text x="330" y="40" font-family="Arial" font-size="14">Present State</text>
+      
+      <!-- Title -->
+      <text x="170" y="350" font-family="Arial" font-size="18" font-weight="bold">Basic Sequential Circuit Structure</text>
+  </svg>
+  </div></center>
   
+  <h1>Sequential Circuit</h1>
   
   <blockquote>
     Sequential circuits are a fundamental class of digital circuits whose outputs depend not only on the current input values but also on the previous history of inputs, giving them the property of memory.
