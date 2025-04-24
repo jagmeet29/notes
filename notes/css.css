@@ -228,3 +228,53 @@ a {
     background-color: #1e1e1e !important;
   }
 }
+/* Add some additional styling for code blocks with transparent background */
+pre[class*="language-"] {
+  background: transparent !important;
+  margin: 0px;
+  padding: 10px;
+}
+
+/* Override Prism default token colors for better visibility on transparent background */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #708090;
+}
+
+.token.punctuation {
+  color: #444;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+  color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin {
+  color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #9a6e3a;
+  background: transparent;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #07a;
+}
