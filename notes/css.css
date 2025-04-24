@@ -25,12 +25,6 @@ blockquote {
   isolation: isolate;
 }
 
-.res-code {
-  background-color: rgba(173, 140, 102, 0.29);
-  border-radius: 10px;
-  padding: 0px 15px;
-}
-
 .res-ques {
   background-color: rgba(166, 159, 29, 0.27);
   border-radius: 10px;
@@ -62,7 +56,8 @@ table {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
-th, td {
+th,
+td {
   border: none;
   border-bottom: 1px solid rgba(153, 153, 153, 0.3);
   padding: 0.8em 1em;
@@ -138,10 +133,8 @@ a {
   overflow: hidden;
   opacity: 0;
   transform: translateY(-10px);
-  transition: max-height 0.5s ease-out, 
-              opacity 0.4s ease-out, 
-              transform 0.4s ease-out,
-              padding 0.4s ease-out;
+  transition: max-height 0.5s ease-out, opacity 0.4s ease-out,
+    transform 0.4s ease-out, padding 0.4s ease-out;
   padding: 0 15px;
   box-sizing: border-box;
   will-change: max-height, opacity, transform;
@@ -159,23 +152,23 @@ a {
   * {
     -webkit-tap-highlight-color: transparent;
   }
-  
+
   body {
     font-size: 1em;
   }
-  
+
   #container {
     width: 95%;
     margin: 0 auto;
     padding: 0 10px;
     box-sizing: border-box;
   }
-  
+
   /* Simplify flex layouts on small screens */
   .res-container div[style="display: flex"] {
     flex-direction: column;
   }
-  
+
   /* Optimize image loading */
   img {
     content-visibility: auto;
@@ -187,52 +180,60 @@ a {
     background-color: #121212; /* More battery-efficient than pure black */
     color: #e0e0e0; /* Softer than pure white */
   }
-  
+
   table {
     color: #e0e0e0;
   }
-  
+
   th {
     color: #f5deb3; /* wheat */
   }
-  
+
   img {
     border-radius: 10px;
     padding: 5px;
   }
-  
+
   tbody tr:nth-child(even) {
     background-color: rgba(178, 164, 148, 0.08);
   }
-  
+
   tbody tr:hover {
     background-color: rgba(173, 140, 102, 0.15);
     transition: background-color 0.2s ease;
   }
-  
+
   blockquote {
     border-left: 3px solid #777;
     color: #d0d0d0;
   }
-  
+
   button {
     background-color: #2a2a2a;
     color: #e0e0e0;
   }
-  
+
   button:hover {
     background-color: #3a3a3a;
   }
-  
+
   .ans-content table {
     background-color: #1e1e1e !important;
   }
 }
 /* Add some additional styling for code blocks with transparent background */
+
+
+
 pre[class*="language-"] {
-  background: transparent !important;
   margin: 0px;
-  padding: 10px;
+  padding: 10px 30px;
+  background-color: rgba(173, 140, 102, 0.29) !important;
+  border-radius: 10px;
+  box-shadow: none;
+  border: none;
+  margin: 10px;
+
 }
 
 /* Override Prism default token colors for better visibility on transparent background */

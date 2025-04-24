@@ -1,5 +1,6 @@
 <script src="../comm.js"></script>
 <link rel="stylesheet" href="../css.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <div id="container">
   <h1>$1$-Bit Storage Element</h1>
   <h2>SR LAtch</h2>
@@ -27,7 +28,7 @@
     In both implementations, the circuit has two outputs, \(Q\) and \(Q'\),
     which are normally complementary to each other.
   </p>
-  <div class="res-contaner">
+  <div class="res-container">
     <center>
       <img src="1.png" />
       <caption>
@@ -35,7 +36,7 @@
       </caption>
     </center>
   </div>
-  <div class="res-contaner">
+  <div class="res-container">
     <center>
       <img src="2.png" />
       <caption>
@@ -136,7 +137,7 @@
     This implementation is sometimes referred to as an \(S'R'\) latch to
     indicate that the inputs are active-low.
   </p>
-  <div class="res-contaner">
+  <div class="res-container">
     <center>
       <img src="3.png" />
       <caption>
@@ -175,8 +176,7 @@
     If \(En=1\) and both \(S\) and \(R\) are \(1\) (for NAND implementation),
     the circuit enters an indeterminate state, which should be avoided.
   </p>
-
-  <div class="res-code">
+  <h4>Using DataFlow</h4>
     <pre><code class="language-verilog">
 module sr_latch(
   input wire S, R,
@@ -184,8 +184,7 @@ module sr_latch(
 );
   assign Q = ~(R | Q_not);
   assign Q_not = ~(S | Q);
-endmodule</code></pre>
-  </div>
-
+endmodule
+</code></pre>
   <h2>D Latch</h2>
 </div>
