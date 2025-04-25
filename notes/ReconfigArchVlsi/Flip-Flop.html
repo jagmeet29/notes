@@ -176,15 +176,199 @@
     If \(En=1\) and both \(S\) and \(R\) are \(1\) (for NAND implementation),
     the circuit enters an indeterminate state, which should be avoided.
   </p>
-  <h4>Using DataFlow</h4>
-    <pre><code class="language-verilog">
-module sr_latch(
-  input wire S, R,
-  output wire Q, Q_not
-);
-  assign Q = ~(R | Q_not);
-  assign Q_not = ~(S | Q);
-endmodule
+  <hr>
+  <h2>SR Latch</h2> 
+  <pre><code class="language-verilog">
+    module sr_latch (
+      input wire enable,   // Enable input
+      input wire reset,    // Active high reset
+      input wire s,        // Set input
+      input wire r,        // Reset input
+      output reg q         // Output
+  );
+      
+      // Trigger on changes to enable, s, r, or reset
+      always @(enable or s or r or reset) begin
+          if (reset)
+              q <= 1'b0;           // Reset output to 0
+          else if (enable) begin
+              case ({s, r})
+                  2'b00: q <= q;      // No change
+                  2'b01: q <= 1'b0;   // Reset
+                  2'b10: q <= 1'b1;   // Set
+                  2'b11: q <= 1'bx;   // Invalid state
+              endcase
+          end
+          // else hold state (implicit)
+      end
+      
+  endmodule  
 </code></pre>
   <h2>D Latch</h2>
+  <pre><code class="language-verilog">
+    module d_latch (
+      input wire enable,   // Enable input
+      input wire reset,    // Active high reset
+      input wire d,        // Data input
+      output reg q         // Output
+  );
+      
+      // Trigger on changes to enable, d, or reset
+      always @(enable or d or reset) begin
+          if (reset)
+              q <= 1'b0;           // Reset output to 0
+          else if (enable)
+              q <= d;              // Capture D when enabled
+          // else hold state (implicit)
+      end
+      
+  endmodule   
+  </code></pre>
+  <h2>Enabled SR Latch</h2>
+  <pre><code class="language-verilog">
+    module enabled_d_latch (
+      input wire clk,      // Clock input (acts as enable)
+      input wire reset,    // Active high reset
+      input wire en,       // Enable signal
+      input wire d,        // Data input
+      output reg q         // Output
+  );
+      
+      // Trigger on changes to clock, en, d, or reset
+      always @(clk or en or d or reset) begin
+          if (reset)
+              q <= 1'b0;           // Reset output to 0
+          else if (clk && en)      // Only capture when both clock and enable are high
+              q <= d;
+          // else hold state (implicit)
+      end
+      
+  endmodule  
+  </code></pre>
+  <h2>Master Slave JK Flip Flop</h2>
+  <pre><code class="language-verilog">
+    module master_slave_jk_flip_flop (
+      input wire clk,      // Clock input
+      input wire reset,    // Active high reset
+      input wire j,        // J input
+      input wire k,        // K input
+      output reg q         // Output
+  );
+      
+      reg master_q;        // Master stage output
+      
+      // Master stage: captures on positive edge
+      always @(posedge clk or posedge reset) begin
+          if (reset)
+              master_q <= 1'b0;
+          else begin
+              case ({j, k})
+                  2'b00: master_q <= master_q;  // No change
+                  2'b01: master_q <= 1'b0;      // Reset
+                  2'b10: master_q <= 1'b1;      // Set
+                  2'b11: master_q <= ~master_q; // Toggle
+              endcase
+          end
+      end
+      
+      // Slave stage: captures on negative edge
+      always @(negedge clk or posedge reset) begin
+          if (reset)
+              q <= 1'b0;
+          else
+              q <= master_q;       // Transfer from master to slave
+      end
+      
+  endmodule  
+  </code></pre>
+  <h2>SR Flip Flop</h2>
+  <pre><code class="language-verilog">
+    module sr_flip_flop (
+      input wire clk,      // Clock input
+      input wire reset,    // Active high reset
+      input wire s,        // Set input
+      input wire r,        // Reset input
+      output reg q         // Output
+  );
+      
+      always @(posedge clk or posedge reset) begin
+          if (reset)
+              q <= 1'b0;   // Reset output to 0
+          else begin
+              case ({s, r})
+                  2'b00: q <= q;      // No change
+                  2'b01: q <= 1'b0;   // Reset
+                  2'b10: q <= 1'b1;   // Set
+                  2'b11: q <= 1'bx;   // Invalid state
+              endcase
+          end
+      end
+      
+  endmodule  
+  </code></pre>
+  <h2>JK Flip Flop</h2>
+  <pre><code class="language-verilog">
+    module jk_flip_flop (
+      input wire clk,      // Clock input
+      input wire reset,    // Active high reset
+      input wire j,        // J input (set)
+      input wire k,        // K input (reset)
+      output reg q         // Output
+  );
+      
+      always @(posedge clk or posedge reset) begin
+          if (reset)
+              q <= 1'b0;   // Reset output to 0
+          else begin
+              case ({j, k})
+                  2'b00: q <= q;      // No change
+                  2'b01: q <= 1'b0;   // Reset
+                  2'b10: q <= 1'b1;   // Set
+                  2'b11: q <= ~q;     // Toggle
+              endcase
+          end
+      end
+      
+  endmodule  
+  </code></pre>
+  <h2>T Flip Flop</h2>
+  <pre>
+    <code class="language-verilog">
+      module t_flip_flop (
+        input wire clk,      // Clock input
+        input wire reset,    // Active high reset
+        input wire t,        // Toggle input
+        output reg q         // Output
+    );
+        
+        always @(posedge clk or posedge reset) begin
+            if (reset)
+                q <= 1'b0;   // Reset output to 0
+            else if (t)
+                q <= ~q;     // Toggle output if t=1
+            // else maintain state (implicit)
+        end
+        
+    endmodule    
+    </code>
+  </pre>
+  <h2>D Flip Flop</h2>
+  <pre><code class="language-verilog">
+    module d_flip_flop (
+      input wire clk,      // Clock input
+      input wire reset,    // Active high reset
+      input wire d,        // Data input
+      output reg q         // Output
+  );
+      
+      // Trigger on positive edge of clock or reset
+      always @(posedge clk or posedge reset) begin
+          if (reset)
+              q <= 1'b0;   // Reset output to 0
+          else
+              q <= d;      // Capture D on clock edge
+      end
+      
+  endmodule  
+  </code></pre>
 </div>

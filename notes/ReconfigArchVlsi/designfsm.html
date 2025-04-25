@@ -87,7 +87,7 @@ ping and non overlapping ?</h3>
   <h1>Moore Code and State Diagram</h1>
   <div class="res-container"> 
     <center>
-      <img src="4.jpg"  width="600px"/>
+      <img src="4.png"  width="600px"/>
       <center>
         Overlapping (1) and Non Overlapping (2)
       </center>
@@ -200,15 +200,15 @@ always @(posedge clk)
         if(x==1)
             begin
             state=2'b01;
-            out=0;
             end
+            out=0;
         end
         2'b01:begin
         if(x==0)
             begin
             state=2'b10;
-            out=0;
             end
+            out=0;
         end
         2'b10:begin
         if(x==1)
@@ -219,8 +219,8 @@ always @(posedge clk)
         else
             begin
             state=2'b00;
-            out=0;
             end
+            out=0;
         end
     endcase
 endmodule
@@ -237,23 +237,28 @@ always @(posedge clk)
         if(x==1)
             begin
             state=2'b01;
-            out=0;
             end
+            out=0;
         end
         2'b01:begin
         if(x==0)
             begin
             state=2'b10;
-            out=0;
             end
+            out=0;
         end
         2'b10:begin
         if(x==1)
             begin
-            state=2'b01;
-            out=1;
+              state=2'b01;
+              out=1;
             end
-        end
+            else
+            begin
+              state=2'b00;
+            end
+            out=0;
+        end 
     endcase
 endmodule
   </code></pre>
