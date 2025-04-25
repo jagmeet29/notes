@@ -43,3 +43,26 @@ endmodule
 
 <li>The counter works as a frequency divider by 2^n, where n is the bit position.</li>
 </ul>
+<h2>Test bench</h2>
+<pre><code class="language-verilog">
+module clockdivide_test;
+reg clk;
+wire nclk;
+clockdivide uu(clk, nclk);
+    initial begin
+        clk=0;
+        forever #5clk=~clk;
+    end
+    initial
+        # 1000000000 $stop;
+endmodule
+</code></pre>
+
+<h2>Top module</h2>
+<pre><code class="language-verilog">
+module clock_divider_top(clk,led);
+input clk;
+output led;
+clockdivide u1(clk, led);
+endmodule
+</code></pre>
