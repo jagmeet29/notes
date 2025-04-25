@@ -176,8 +176,8 @@
     If \(En=1\) and both \(S\) and \(R\) are \(1\) (for NAND implementation),
     the circuit enters an indeterminate state, which should be avoided.
   </p>
-  <hr>
-  <h2>SR Latch</h2> 
+  <hr />
+  <h2>SR Latch</h2>
   <pre><code class="language-verilog">
     module sr_latch (
       input wire enable,   // Enable input
@@ -224,7 +224,7 @@
       
   endmodule   
   </code></pre>
-  <h2>Enabled SR Latch</h2>
+  <h2>Enabled D Latch</h2>
   <pre><code class="language-verilog">
     module enabled_d_latch (
       input wire clk,      // Clock input (acts as enable)
