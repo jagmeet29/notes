@@ -124,7 +124,9 @@ button:focus {
 a {
   color: #007bff;
   text-decoration: none;
+  transition: font-size 0.3s ease, color 0.3s ease;
 }
+
 
 .anoblue {
   color: black;
