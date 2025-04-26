@@ -37,41 +37,6 @@ function loadDependencies() {
   prismAutoloader.src = 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js';
   document.head.appendChild(prismAutoloader);
   
-  // Add your custom CSS for code styling
-  const customStyles = document.createElement('style');
-  customStyles.textContent = `
-    /* Add some additional styling for code blocks */
-    pre[class*="language-"] {
-      border-radius: 8px;
-      margin: 1.5em 0;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      background: transparent !important; /* Override Prism background */
-      border: 1px solid #ddd;
-    }
-    
-    code[class*="language-"] {
-      background: transparent !important; /* Override Prism background */
-    }
-    
-    .code-title {
-      background: #f5f5f5;
-      color: #333;
-      padding: 8px 16px;
-      font-family: monospace;
-      font-size: 0.9em;
-      border-top-left-radius: 8px;
-      border-top-right-radius: 8px;
-      margin-bottom: -8px;
-      border: 1px solid #ddd;
-      border-bottom: none;
-    }
-    
-    .code-container {
-      position: relative;
-    }
-  `;
-  document.head.appendChild(customStyles);
-  
   // Add your event handling for answer buttons
   document.addEventListener("DOMContentLoaded", function () {
     // Add click event listeners to all answer buttons
