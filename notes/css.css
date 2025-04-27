@@ -115,18 +115,17 @@ button:focus {
 
 #container {
   width: 70%;
-  margin: 0 auto;
+  margin: 30px auto;
+
   /* Hint to browser about layout stability */
-  contain: layout style paint;
+
 }
 
 a {
   color: #007bff;
   text-decoration: none;
-  padding: 3px 10px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 10px;
-
 }
 
 a:hover {
@@ -209,6 +208,7 @@ a:active {
     margin: 0 auto;
     padding: 0 10px;
     box-sizing: border-box;
+    box-shadow: #121212 ;
   }
 
   /* Simplify flex layouts on small screens */
