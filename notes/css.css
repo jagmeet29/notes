@@ -47,7 +47,6 @@ blockquote {
 }
 
 table {
-
   border-collapse: separate;
   border-spacing: 0;
   margin-top: 1em;
@@ -124,9 +123,24 @@ button:focus {
 a {
   color: #007bff;
   text-decoration: none;
-  transition: font-size 0.3s ease, color 0.3s ease;
+  padding: 3px 10px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 10px;
+
 }
 
+a:hover {
+  padding: 3px 10px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(81, 125, 246);
+  border-radius: 10px;
+  text-decoration: none;
+}
+a:active {
+  color: rgb(255, 255, 255);
+  background-color: rgb(81, 125, 246);
+  margin: 0px auto;
+}
 
 .anoblue {
   color: black;
@@ -165,9 +179,7 @@ a {
   opacity: 0;
   transform: translateY(-20px);
   transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-              opacity 0.5s ease-in-out,
-              transform 0.5s ease-out,
-              padding 0.4s ease;
+    opacity 0.5s ease-in-out, transform 0.5s ease-out, padding 0.4s ease;
   padding: 0 15px;
   box-sizing: border-box;
   will-change: max-height, opacity, transform;
@@ -181,7 +193,6 @@ a {
   transform: translateY(0);
   padding: 15px;
 }
-
 
 @media (pointer: coarse) or (max-width: 408px) {
   /* Reduce paint operations on mobile */
@@ -312,4 +323,3 @@ pre[class*="language-"] {
 .token.keyword {
   color: #07a;
 }
-
