@@ -40,7 +40,7 @@
     <li>Repeat steps 4-6 until all vertices have been visited.</li>
   </ol>
   <div class="res-ques res-container"><h4>Find the shortest path from $a$  to $f$ </h4><center>
-  <svg xmlns="http://www.w3.org/2000/svg" width="500" height="300">
+  <div class="res-container"><svg xmlns="http://www.w3.org/2000/svg" width="500" height="300" >
 
     <!-- Edges -->
     <line x1="50"  y1="150" x2="150" y2="50"  stroke="black" stroke-width="2"/>
@@ -80,9 +80,10 @@
     <text x="344" y="255" font-size="16" fill="black">e</text>
     <text x="444" y="155" font-size="16" fill="black">f</text>
   
-  </svg>
+  </svg></div>
   <button class="ans-button">Show Answer </button>
   <div class="ans-content">
+    <div class="res-container">
     <p >\[
         \begin{array}{c|cccccc}
         \text{Visited} & a & b & c & d & e & f \\
@@ -97,11 +98,11 @@
         f(9) & - & - & - & - & - & \mathbf{9}(a,b,c,e,d) \\
         \end{array}
         \]
-    </p> 
+    </p> </div>
   </div>
   </center></div>
   
-  <div class="res-ques res-container"><h4>Fing the shortest path between a to z </h4><center><svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <div class="res-ques "><h4>Fing the shortest path between a to z </h4><center><div class="res-container"><svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
 
     <style>
       .edge {
@@ -185,10 +186,10 @@
     <circle cx="450" cy="280" r="15" class="vertex"/>
     <text x="450" y="280" class="vertex-label">z</text>
   
-  </svg>
+  </svg></div>
   <button class="ans-button">Show Answer</button>
   <div class="ans-content">
-
+<div class="res-container">
     \begin{array}{c|cccccccc}
     \text{Visited} & a & b & c & d & e & f & g & z \\
     \hline
@@ -203,7 +204,7 @@
     g(8) & - & - & - & - & - & - & \mathbf{8}(a,e) & 10(a,e,g) \\
     z(8) & - & - & - & - & - & - & - & \mathbf{8}(a,d,c) \\
     \end{array}
-
+  </div>
     
   </div>
   </center></div>
