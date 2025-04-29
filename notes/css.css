@@ -117,7 +117,7 @@ a:active {
 
 /* ---------- TABLES ---------- */
 table {
-  font-size: var(--space-sm);
+  
   border-collapse: separate;
   border-spacing: 0;
   margin-top: var(--space-sm);
