@@ -7,12 +7,12 @@ body {font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   padding: 16px;
 }
 p {
-  margin-bottom: 1.5em;
+  margin-bottom: 1.em;
 }
 /* Example improvement for your HTML notes */
 h1, h2, h3 {
   margin-top: 1.5em;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
   font-weight: 600;
 }
 h1 {
@@ -209,9 +209,11 @@ a:active {
   * {
     -webkit-tap-highlight-color: transparent;
   }
-h1 {
+h1,h2,h3 {
+  margin-top: 1.5em;
   margin-top: 1em;
 }
+
   body {
     font-size: 1em;
   }
