@@ -71,7 +71,7 @@ h6 {
 
   color: var(--text-color);
   line-height: var(--space-sm);
-  margin-top: var(--space-xs);
+  margin-top: var(--space-sm);
   margin-bottom: var(--space-xss);
 }
 
