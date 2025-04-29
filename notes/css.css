@@ -61,7 +61,7 @@ h2 {
   color: var(--text-color);
   line-height: var(--space-sm);
   margin-top: var(--space-md);
-  margin-bottom: var(--space-xs);
+  margin-bottom: var(--space-md);
 }
 h3,
 h4,
