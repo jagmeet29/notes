@@ -4,8 +4,38 @@
 <div id="container">
     <h1>Process-To-Process Delivery</h1>
     <div class="res-container">
-        <img src="1.png"  />
+        <img src="1.png" width="600px" />
         </div>
+        <div class="res-container">
+        <table>
+            <tr>
+            <th>Layer</th>
+            <th>Address Used</th>
+            <th>Purpose</th>
+            </tr>
+            <tr>
+            <td>Data-Link</th>
+            <td>MAC Address</th>
+            <td>Identifies a node on a local network</th>
+            </tr>
+            <tr>
+            <td>Network</th>
+            <td>IP Address</th>
+            <td>Identifies a host on the global Internet</th>
+            </tr>
+            <tr>
+            <td>Transport</th>
+            <td>Port Number</th>
+            <td>Identifies a process/application on a host</th>
+            </tr>
+            <tr>
+            <td>Application</th>
+            <td>Application Name</th>
+            <td>User-friendly identifier (e.g., URL, email)</th>
+            </tr>
+            </table></div>
+            
+            
         <h2>Types of Delivery</h2>
         <h3>Node to Node Delivery</h3>
         <blockquote>Delivery of frames between two neighboring nodes over a link by data-link layer.
@@ -53,6 +83,9 @@ A mechanism is required to deliver data from one of these processes running on t
 Operating systems today support both multi-user and multi-programming environments. A server and client both can run several programs at the same time.
 </p>
 
+<div class="res-container">
+        <img src="4.png" width="400px" />
+        </div>
 <h2>Addressing</h2>
 <blockquote>Addressing in computer networks, especially at the transport layer, is the method used to deliver data from one specific process on a host to another specific process on a different host.</blockquote>
 
@@ -79,25 +112,126 @@ It involves two key identifiers at each end of the communication:</b>
 </p>
 <p>Port numbers allow multiplexing and demultiplexing of data to/from applications.</p>
 </p>
+<div class="res-container">
+        <img src="3.png" width="400px" />
+        </div>
 <h3>
    IP Address + Port Number =  Socket Address
 </h3>
 <blockquote>To uniquely identify a process on a host, we combine the IP address and port number. This combination is known as a socket address.</blockquote>
-
+<p>The IP header contains the IP address, the UDP or TCP header contains the port numbers</p>
 <b>Example:</b> 192.168.1.1:80 (IP address + port 80, typically for HTTP server).
 <br><br>
 Both client and server have socket addresses to uniquely identify the communicating processes.
 <br><br>
 <h4>Port Number Categories</h4>
-<ol>
-<li>Well-known Ports (0–1023): Reserved for common services (e.g., HTTP on 80, FTP on 21, DNS on 53).</li>
-<li>Registered Ports (1024–49151): Assigned to specific services by IANA but not tightly controlled.</li>
-<li>Dynamic or Ephemeral Ports (49152–65535): Used temporarily by client processes when initiating communication.</li>
-</ol>
+<div class="res-container">
 
-Port Number Categories
-Well-known Ports (0–1023): Reserved for common services (e.g., HTTP on 80, FTP on 21, DNS on 53).
+<table>
+<tr>    
+<th>Port Number Range</th>
+<th>Category</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>0–1023</td>
+<td>Well-known</td>
+<td>Assigned and controlled by IANA for common services (e.g., HTTP: 80, FTP: 21)</td>
+</tr>
+<tr>
+<td>1024–49151</td>
+<td>Registered</td>
+<td>Registered with IANA for specific services/applications</td>
+</tr>
+<tr>
+<td>49152–65535</td>
+<td>Dynamic/Ephemeral</td>
+<td>Used temporarily by client processes, not registered</td>
+</tr>
+</table></div>
 
-Registered Ports (1024–49151): Assigned to specific services by IANA but not tightly controlled.
 
-Dynamic or Ephemeral Ports (49152–65535): Used temporarily by client processes when initiating communication.
+<p>These categories help manage port assignments and avoid conflicts between different applications and services. <br>
+<br>
+
+The server process must also define itself with a port number, this port number is however cannot be chosen randomly.
+If the computer at the server site runs a server process and assigns a random port number.<br><br>
+The process at the client that wants to access that server and use its services will NOT know the port number.
+One solution is that the host send a special packet and request the port number, but this requires more overhead.
+<br><br>Servers use well-known ports so clients know where to send requests (e.g., web servers use port 80).<br><br>
+
+Clients typically use dynamic or ephemeral ports, which are assigned temporarily for the duration of a connection</p>  
+<p><b>Example: </b>A Daytime client process, can use an ephemeral (temporary) port number 52,000 to identify itself.
+    The Daytime server process must use the well-known (permanent) port number 13.
+    </p>
+<div class="res-container">
+        <img src="2.png"  width="500px"/><br><br>
+        </div>
+
+        
+        <h2>Connectionless vs Connection-Oriented Service</h2>
+        <div class="res-container">
+        <table>
+          <tr>
+            <th>Feature</th>
+            <th>Connectionless Service</th>
+            <th>Connection-Oriented Service</th>
+          </tr>
+          <tr>
+            <td>Connection Setup</td>
+            <td>No setup required before data transfer</td>
+            <td>Requires connection establishment before transfer</td>
+          </tr>
+          <tr>
+            <td>Analogy</td>
+            <td>Like sending a letter via postal system</td>
+            <td>Like making a phone call</td>
+          </tr>
+          <tr>
+            <td>Data Path</td>
+            <td>Each packet may take a different route</td>
+            <td>All data follows the same virtual path</td>
+          </tr>
+          <tr>
+            <td>Order of Delivery</td>
+            <td>Packets may arrive out of order</td>
+            <td>Data arrives in the same order as sent</td>
+          </tr>
+          <tr>
+            <td>Reliability</td>
+            <td>No guarantee of delivery or order</td>
+            <td>Reliable delivery and order guaranteed</td>
+          </tr>
+          <tr>
+            <td>Acknowledgment</td>
+            <td>No acknowledgment of receipt</td>
+            <td>Uses acknowledgments for error and flow control</td>
+          </tr>
+          <tr>
+            <td>Congestion Control</td>
+            <td>Prone to congestion</td>
+            <td>Less prone due to controlled connection</td>
+          </tr>
+          <tr>
+            <td>Overhead</td>
+            <td>Low protocol overhead</td>
+            <td>Higher overhead due to connection management</td>
+          </tr>
+          <tr>
+            <td>Typical Protocol</td>
+            <td>UDP (User Datagram Protocol)</td>
+            <td>TCP (Transmission Control Protocol)</td>
+          </tr>
+          <tr>
+            <td>Use Case</td>
+            <td>Suitable for real-time, bursty, or simple requests (e.g., streaming, DNS)</td>
+            <td>Suitable for long, steady communication (e.g., file transfer, web browsing)</td>
+          </tr>
+          <tr>
+            <td>Examples</td>
+            <td>DNS, VoIP, TFTP, SNMP</td>
+            <td>HTTP, FTP, SMTP, Telnet</td>
+          </tr>
+        </table></div>
+
+
