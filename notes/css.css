@@ -30,8 +30,12 @@
   --border-radius: 10px;
 }
 
+.res-ques h4 {
+  font-size: 1.2em;
+}
+
 .note {
-  color: var(--text-note-color) ;
+  color: var(--text-note-color);
 }
 body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -57,7 +61,7 @@ h1 {
   margin-top: var(--space-lg);
 }
 h2 {
-  font-size: 1.7em;
+  font-size: 2.1em;
   color: var(--text-color);
   line-height: var(--space-sm);
   margin-top: var(--space-md);
@@ -74,14 +78,29 @@ h6 {
   margin-top: var(--space-sm);
   margin-bottom: var(--space-xss);
 }
-
+h4{
+  font-size: 1.3em;
+  color: var(--text-color);
+  line-height: var(--space-sm);
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-xss);
+}
+img {
+  width: 70%;
+  height: auto;
+  margin: 0px auto;
+  display: block;
+}
 p {
   margin-bottom: var(--space-sm);
 }
 li {
   margin-bottom: var(--space-xs);
 }
-ul,ol {padding-left: 2em;}
+ul,
+ol {
+  padding-left: 2em;
+}
 blockquote {
   margin: var(--space-sm) 0;
   padding: var(--space-xs) var(--space-sm);
@@ -94,7 +113,7 @@ blockquote {
 a {
   color: var(--accent-color);
   text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: var(--border-radius);
 }
 
@@ -117,7 +136,6 @@ a:active {
 
 /* ---------- TABLES ---------- */
 table {
-  
   border-collapse: separate;
   border-spacing: 0;
   margin-top: var(--space-sm);
@@ -315,11 +333,15 @@ pre[class*="language-"] {
 }
 
 /* ---------- RESPONSIVE STYLES ---------- */
-@media (pointer: coarse) or (max-width: 408px) {
+@media screen and (max-width: 768px) {
   * {
     -webkit-tap-highlight-color: transparent;
   }
-
+img {
+  width: 100%;
+  height: auto;
+  margin: 0px auto;
+}
   body {
     font-size: 1em;
   }
@@ -383,6 +405,6 @@ pre[class*="language-"] {
     background-color: #1e1e1e !important;
   }
   .note {
-    color: var(--text-note-color) ;
+    color: var(--text-note-color);
   }
 }
