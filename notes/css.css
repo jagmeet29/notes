@@ -1,76 +1,133 @@
-body {font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 1.3rem; 
-  padding: 20px;
+/* 
+ * CALMER READING CSS
+ * - Softer contrasts and colors
+ * - Increased line height and spacing
+ * - Simplified effects and reduced visual noise
+ * - Optimized for comfortable reading
+ */
+
+/* ---------- BASE STYLES ---------- */
+:root {
+  /* Colors - Softer Tones */
+  --text-color: #4a4a4a; /* Slightly softer than pure black */
+  --text-color-light: #6a6a6a; /* Softer grey */
+  --bg-color: #fdfdfd; /* Slightly off-white */
+  --bg-color-alt: #f5f5f5; /* Subtle alternative background */
+  --accent-color: #0077cc; /* Slightly less saturated blue */
+  --border-color: #dcdcdc; /* Lighter border */
+  --shadow-color: rgba(0, 0, 0, 0.04); /* Very subtle shadow */
+  --shadow-color-hover: rgba(0, 0, 0, 0.08); /* Subtle hover shadow */
+  
+  /* Question box - Using border instead of background */
+  --question-border-color: #e0e0e0; 
+  
+  /* Table colors - More subdued */
+  --table-header-bg: rgba(0, 0, 0, 0.03); /* Very light grey */
+  --table-alt-row-bg: transparent; /* Removed alternating rows for simplicity */
+  --table-hover-bg: rgba(0, 0, 0, 0.04); /* Subtle hover */
+  
+  /* Spacing - Slightly increased */
+  --space-xs: 0.6em;
+  --space-sm: 1.1em;
+  --space-md: 1.7em; 
+  --space-lg: 2.2em;
+  
+  /* Border radius */
+  --border-radius: 8px; /* Slightly softer radius */
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.1rem; /* Slightly smaller base for less overwhelm */
+  line-height: 1.7; /* Increased line height for readability */
   margin: 0;
-  line-height: 1.5;
-  margin: 0;
-  padding: 16px;
-}
-p {
-  margin-bottom: 1.em;
-}
-/* Example improvement for your HTML notes */
-h1, h2, h3 {
-  margin-top: 1.5em;
-  margin-bottom: 1em;
-  font-weight: 600;
-}
-h1 {
-  font-size: 2.5em;
-  color: #333; 
-  font-weight: 700;
-}
-blockquote {
-  margin: 1em 0;
-  padding-left: 1em;
-  border-left: 3px solid #ccc;
-  color: #555;
+  padding: 20px; /* Increased body padding */
+  color: var(--text-color);
+  background-color: var(--bg-color); /* Apply base background */
 }
 
-.res-container {
-  overflow-x: auto; /* Enable horizontal scrolling */
-  -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
-  /* Optimize rendering performance */
-  will-change: transform;
-  /* Create a new stacking context for better compositing */
-  isolation: isolate;
-}
-
-.res-ques {
-  background-color: rgba(166, 159, 29, 0.27);
-  border-radius: 10px;
-  padding: 15px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  /* Use transform instead of height for animations */
-  transform: translateY(0);
-  transition: transform 0.3s ease-out;
-  /* Hint at future transforms for smoother animations */
-  will-change: transform;
-}
-
-.res-ques img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  display: block;
+#container {
+  width: 65%; /* Narrower width for shorter, easier-to-read lines */
+  max-width: 800px; /* Max width to prevent extreme width on large screens */
   margin: 0 auto;
 }
 
+/* ---------- TYPOGRAPHY ---------- */
+h1, h2, h3 {
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-sm);
+  font-weight: 500; /* Slightly lighter headings */
+  color: var(--text-color); /* Ensure heading color consistency */
+}
+
+h1 {
+  font-size: 2.2em; /* Slightly reduced H1 size */
+  font-weight: 600; /* Keep H1 slightly bolder */
+  border-bottom: 1px solid var(--border-color); /* Subtle separator */
+  padding-bottom: 0.3em;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+h3 {
+    font-size: 1.4em;
+}
+
+p {
+  margin-bottom: var(--space-sm);
+}
+
+blockquote {
+  margin: var(--space-sm) 0 var(--space-sm) var(--space-sm); /* Indent slightly */
+  padding-left: var(--space-sm);
+  border-left: 3px solid var(--border-color); /* Use lighter border */
+  color: var(--text-color-light);
+  font-style: italic; /* Common quote styling */
+}
+
+/* ---------- LINKS ---------- */
+a {
+  color: var(--accent-color);
+  text-decoration: none; /* Remove default underline */
+  border-bottom: 1px solid transparent; /* Prepare for hover effect */
+  transition: color 0.2s ease, border-color 0.2s ease; /* Smooth transitions */
+  /* Removed padding/background change on hover for less distraction */
+}
+
+a:hover {
+  color: var(--text-color); /* Slightly darken on hover */
+  border-bottom-color: var(--accent-color); /* Subtle underline appears */
+  text-decoration: none; /* Ensure no default underline appears */
+}
+
+a:active {
+  color: var(--text-color); /* Consistent active state */
+}
+
+.anoblue {
+  color: var(--text-color); /* Ensure this class overrides link color if needed */
+}
+
+/* ---------- TABLES ---------- */
 table {
-  border-collapse: separate;
+  border-collapse: collapse; /* Use collapse for simpler lines */
   border-spacing: 0;
-  margin-top: 1em;
-  border-radius: 10px;
+  margin-top: var(--space-md); /* Consistent spacing */
+  margin-bottom: var(--space-md);
+  border-radius: 0; /* Remove radius for cleaner lines with border */
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: none; /* Remove shadow for less visual weight */
+  border: 1px solid var(--border-color); /* Use simple border */
+  width: 100%;
 }
 
 th,
 td {
   border: none;
-  border-bottom: 1px solid rgba(153, 153, 153, 0.3);
-  padding: 0.8em 1em;
+  border-bottom: 1px solid var(--border-color); /* Lighter internal borders */
+  padding: 0.9em 1.1em; /* Slightly more padding */
   text-align: left;
 }
 
@@ -79,231 +136,141 @@ tr:last-child td {
 }
 
 th {
-  background-color: rgba(173, 102, 102, 0.17);
-  font-weight: 600;
-  color: #333;
+  background-color: var(--table-header-bg);
+  font-weight: 500; /* Lighter header weight */
+  color: var(--text-color);
+  border-bottom: 2px solid var(--border-color); /* Stronger header separator */
 }
 
-tbody tr:nth-child(even) {
-  background-color: rgba(173, 140, 102, 0.05);
-}
-
-tbody tr:hover {
-  background-color: rgba(173, 140, 102, 0.159);
+tbody tr {
+  background-color: transparent; /* Ensure no background */
   transition: background-color 0.2s ease;
 }
 
+/* Removed alternating row color */
+
+tbody tr:hover {
+  background-color: var(--table-hover-bg); /* Very subtle hover */
+}
+
+/* ---------- BUTTONS ---------- */
 button {
-  background-color: #ffffff;
-  color: rgb(0, 0, 0);
-  border: none;
+  background-color: var(--bg-color-alt); /* Use subtle alt background */
+  color: var(--text-color);
+  border: 1px solid var(--border-color); /* Add subtle border */
   padding: 10px 20px;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   cursor: pointer;
   font-size: 1em;
   display: block;
-  margin: 0 auto;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: var(--space-md) auto; /* Consistent spacing */
+  transition: background-color 0.2s ease, transform 0.1s ease; /* Simplified transitions */
   touch-action: manipulation;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: none; /* Remove default shadow */
 }
 
 button:hover {
-  background-color: #f0f0f0;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  background-color: #e9e9e9; /* Slightly darker hover */
+  /* Removed transform and shadow change for less movement */
 }
 
 button:active {
-  transform: translateY(1px);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transform: translateY(1px); /* Minimal feedback on click */
+  background-color: #e0e0e0;
 }
 
 button:focus {
   outline: none;
-  box-shadow: 0 0 0 2px rgba(173, 140, 102, 0.5);
+  box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.3); /* Use accent color for focus ring */
 }
 
-#container {
-  width: 70%; 
-  margin: 0px auto;
-
-  /* Hint to browser about layout stability */
-
+/* ---------- CONTAINERS & LAYOUT ---------- */
+.res-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
-a {
-  color: #007bff;
-  text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: 10px;
+.res-ques {
+  /* background-color: var(--question-bg); Removed background */
+  border: 1px solid var(--question-border-color); /* Use a border instead */
+  border-radius: var(--border-radius);
+  padding: var(--space-sm); /* Consistent padding */
+  margin-bottom: var(--space-md); /* Consistent spacing */
+  box-shadow: none; /* Remove shadow */
+  /* Removed transform/transition - static is calmer */
 }
 
-a:hover {
-  padding: 3px 10px;
-  color: rgb(255, 255, 255);
-  background-color: rgb(81, 125, 246);
-  border-radius: 10px;
-  text-decoration: none;
-}
-a:active {
-  color: rgb(255, 255, 255);
-  background-color: rgb(81, 125, 246);
-  margin: 0px auto;
+.res-ques img {
+  max-width: 100%;
+  height: auto;
+  border-radius: calc(var(--border-radius) - 4px); /* Slightly smaller radius for images */
+  display: block;
+  margin: var(--space-sm) auto; /* Add some space around images */
 }
 
-.anoblue {
-  color: black;
-}
-
+/* ---------- ANIMATIONS ---------- */
 .underline {
-  height: 3px;
-  border-radius: 10px;
-  margin: 0px 10px;
-  background: linear-gradient(
-    to right,
-
-    orange,
-    rgb(151, 1, 151),
-    violet,
-    pink,
-    violet
-  );
-  background-size: 200%;
-  animation: gradientShift 5s infinite;
+  height: 1px; /* Make it a simple line */
+  border-radius: 0;
+  margin: var(--space-sm) 0; /* Use variables for spacing */
+  background: var(--border-color); /* Simple, static color */
+  /* Removed gradient and animation */
 }
 
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
+/* Keyframes removed */
 
-/* Smooth Animation for Answer Content */
+/* ---------- ANSWER CONTENT ANIMATIONS ---------- */
+/* Keep this animation as it's functional for showing/hiding content */
+/* Ensure timings are smooth */
 .ans-content {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transform: translateY(-20px);
-  transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 0.5s ease-in-out, transform 0.5s ease-out, padding 0.4s ease;
-  padding: 0 15px;
+  transform: translateY(-10px); /* Slightly less movement */
+  transition: 
+    max-height 0.5s ease-in-out, /* Smoother timing */
+    opacity 0.4s ease-in-out, 
+    transform 0.4s ease-in-out, 
+    padding 0.4s ease-in-out,
+    margin 0.4s ease-in-out; /* Added margin transition */
+  padding: 0 var(--space-sm); /* Use variables */
+  margin: 0;
   box-sizing: border-box;
-  will-change: max-height, opacity, transform;
-  /* Ensure content doesn't jump during transition */
+  will-change: max-height, opacity, transform, margin, padding;
   position: relative;
 }
 
 .ans-content.visible {
-  max-height: 2000px; /* Increased to accommodate larger content */
+  max-height: 2000px; /* Adjust as needed */
   opacity: 1;
   transform: translateY(0);
-  padding: 15px;
+  padding: var(--space-sm);
+  margin-top: var(--space-xs); /* Add slight space when visible */
+  margin-bottom: var(--space-sm);
 }
 
-@media (pointer: coarse) or (max-width: 408px) {
-  /* Reduce paint operations on mobile */
-  * {
-    -webkit-tap-highlight-color: transparent;
-  }
-h1,h2,h3 {
-  margin-top: 1.5em;
-  margin-top: 1em;
-}
-
-  body {
-    font-size: 1em;
-  }
-
-  #container {
-    width: 97%;
-    margin: 0 auto;
-    box-sizing: border-box;
-    box-shadow: #121212 ;
-  }
-
-  /* Simplify flex layouts on small screens */
-  .res-container div[style="display: flex"] {
-    flex-direction: column;
-  }
-
-  /* Optimize image loading */
-  img {
-    content-visibility: auto;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #121212; /* More battery-efficient than pure black */
-    color: #e0e0e0; /* Softer than pure white */
-  }
-
-  table {
-    color: #e0e0e0;
-  }
-
-  th {
-    color: #f5deb3; /* wheat */
-  }
-
-  img {
-    border-radius: 10px;
-    padding: 5px;
-  }
-
-  tbody tr:nth-child(even) {
-    background-color: rgba(178, 164, 148, 0.08);
-  }
-
-  tbody tr:hover {
-    background-color: rgba(173, 140, 102, 0.15);
-    transition: background-color 0.2s ease;
-  }
-
-  blockquote {
-    border-left: 3px solid #777;
-    color: #d0d0d0;
-  }
-
-  button {
-    background-color: #2a2a2a;
-    color: #e0e0e0;
-  }
-
-  button:hover {
-    background-color: #3a3a3a;
-  }
-
-  .ans-content table {
-    background-color: #1e1e1e !important;
-  }
-}
-/* Add some additional styling for code blocks with transparent background */
-
+/* ---------- CODE BLOCKS ---------- */
 pre[class*="language-"] {
-  margin: 0px;
-  padding: 10px 30px;
-  background-color: rgba(173, 140, 102, 0.29) !important;
-  border-radius: 10px;
+  margin: var(--space-sm) 0; /* Consistent vertical margins */
+  padding: var(--space-sm); /* Consistent padding */
+  background-color: var(--bg-color-alt) !important; /* Subtle background */
+  border: 1px solid var(--border-color); /* Subtle border */
+  border-radius: var(--border-radius);
   box-shadow: none;
-  border: none;
-  margin: 10px;
+  overflow-x: auto; /* Ensure horizontal scroll for long lines */
 }
 
-/* Override Prism default token colors for better visibility on transparent background */
+/* Code syntax highlighting tokens - Keeping defaults, generally okay */
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #708090;
+  color: #708090; 
+  font-style: italic; /* Make comments italic */
 }
 
 .token.punctuation {
-  color: #444;
+  color: #888; /* Slightly lighter punctuation */
 }
 
 .token.property,
@@ -312,7 +279,7 @@ pre[class*="language-"] {
 .token.number,
 .token.constant,
 .token.symbol {
-  color: #905;
+  color: #d15000; /* Adjusted orange/brown */
 }
 
 .token.selector,
@@ -320,7 +287,7 @@ pre[class*="language-"] {
 .token.string,
 .token.char,
 .token.builtin {
-  color: #690;
+  color: #008000; /* Adjusted green */
 }
 
 .token.operator,
@@ -328,12 +295,141 @@ pre[class*="language-"] {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-  color: #9a6e3a;
+  color: #555; /* Darker grey for operators */
   background: transparent;
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-  color: #07a;
+  color: #0077cc; /* Use accent color */
+}
+
+/* ---------- RESPONSIVE STYLES ---------- */
+@media (pointer: coarse) or (max-width: 600px) { /* Adjusted breakpoint */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, h3 {
+    margin-top: var(--space-sm);
+    line-height: 1.4; /* Slightly tighter line height for headings on mobile */
+  }
+
+  body {
+    font-size: 1rem; /* Use 1rem base on mobile */
+    padding: 15px; /* Slightly less padding */
+  }
+
+  #container {
+    width: 95%; /* Wider container on mobile */
+  }
+  
+  th, td {
+    padding: 0.8em 0.9em; /* Adjust table padding */
+  }
+
+  /* Removed unnecessary rules from original media query */
+}
+
+/* ---------- DARK MODE ---------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark Mode - Softer Contrasts */
+    --text-color: #c0c0c0; /* Lighter grey, not pure white */
+    --text-color-light: #a0a0a0; 
+    --bg-color: #1e1e1e; /* Dark grey, not pure black */
+    --bg-color-alt: #2a2a2a; 
+    --border-color: #444; /* Visible but not harsh border */
+    --accent-color: #3399ff; /* Brighter blue suitable for dark bg */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Slightly more visible shadow needed */
+    --shadow-color-hover: rgba(0, 0, 0, 0.15);
+    
+    --question-border-color: #383838;
+    
+    --table-header-bg: rgba(255, 255, 255, 0.05);
+    --table-hover-bg: rgba(255, 255, 255, 0.07);
+  }
+
+  body {
+    background-color: var(--bg-color); /* Applied */
+  }
+  
+  a:hover {
+    color: #e0e0e0; /* Lighter hover text color */
+    border-bottom-color: var(--accent-color);
+  }
+
+  button {
+    background-color: var(--bg-color-alt);
+    color: var(--text-color);
+    border-color: var(--border-color);
+  }
+
+  button:hover {
+    background-color: #3a3a3a;
+  }
+  
+  button:active {
+    background-color: #444;
+  }
+
+  button:focus {
+     box-shadow: 0 0 0 3px rgba(51, 153, 255, 0.4); /* Adjusted focus ring */
+  }
+
+  img {
+     /* Removed specific dark mode image padding/border - let general styles handle */
+     opacity: 0.9; /* Slightly reduce image brightness */
+  }
+
+  /* Code Blocks Dark Mode */
+  pre[class*="language-"] {
+    background-color: #252525 !important; /* Slightly different dark code bg */
+    border-color: var(--border-color);
+  }
+
+  .token.comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata {
+    color: #888; 
+  }
+
+  .token.punctuation {
+    color: #aaa;
+  }
+  
+  .token.property,
+  .token.tag,
+  .token.boolean,
+  .token.number,
+  .token.constant,
+  .token.symbol {
+    color: #f08d49; /* Adjusted orange */
+  }
+
+  .token.selector,
+  .token.attr-name,
+  .token.string,
+  .token.char,
+  .token.builtin {
+    color: #77cc77; /* Adjusted green */
+  }
+  
+  .token.operator,
+  .token.entity,
+  .token.url,
+  .language-css .token.string,
+  .style .token.string {
+    color: #ccc; 
+  }
+  
+  .token.atrule,
+  .token.attr-value,
+  .token.keyword {
+    color: #66aaff; /* Adjusted blue */
+  }
+  
+  /* Removed redundant table background rules */
 }
