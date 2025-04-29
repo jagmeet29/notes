@@ -1,13 +1,19 @@
-body {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  line-height: 1.25;
-  font-size: 1.1em;
+body {font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.3rem; 
   padding: 20px;
   margin: 0;
-  /* Enable hardware acceleration */
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  perspective: 1000px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 16px;
+}
+p {
+  margin-bottom: 1.5em;
+}
+/* Example improvement for your HTML notes */
+h1, h2, h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
 }
 
 blockquote {
@@ -115,8 +121,8 @@ button:focus {
 }
 
 #container {
-  width: 60%;
-  margin: 30px auto;
+  width: 70%; 
+  margin: 0px auto;
 
   /* Hint to browser about layout stability */
 
