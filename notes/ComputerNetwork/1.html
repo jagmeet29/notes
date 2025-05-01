@@ -234,4 +234,110 @@ Clients typically use dynamic or ephemeral ports, which are assigned temporarily
           </tr>
         </table></div>
 
+<h3>Connection Establishment
+</h3>
 
+<div class="res-container">
+  <img src="5.png">
+</div><h4>Steps:</h4>
+<ol>
+  
+  <li>Host A sends a packet to announce wish for connection establishment and includes its initial information about traffic from A to B.</li><li>
+  Host B sends a packet to acknowledge (confirm) the request of A.</li><li>
+  Host B sends a packet that includes its initialization information about traffic from B to A.</li><li>
+  Host A sends a packet to acknowledge (confirm) the request of B.</li>
+  
+</ol>
+
+<p>
+It is a 4 step process but can also be 3 step.
+    As step 2 and 3 can be combined into one.(Host B confirms the request form Host A and sends its own request)
+
+  </p>
+  <h4>Sequence Number and Acknowledgment Number</h4>
+  <ul>
+  <li>Each connection request needs to have a sequence number to recover from the loss or duplication of the packet.
+  </li><li>Each acknowledgement needs to have an acknowledgement number as well, for the same reason.
+    </li>
+    <li>The first sequence number in each direction must be a random for each connection establishment.
+    </li>
+    <li>A sender cannot create several connections that start with the same sequence (e.g. 1)
+      The reason is to prevent a situation called <em>playback</em>.
+      </li>
+
+<p><b>Example</b> In bank transaction a customer makes a connection and requests a transfer of $1 million to a third party.
+  If the network somehow duplicates the transaction after the first connection is closed, the bank may assume that there is a new connection and transfer another <e>$</e>1 million to third party.</p><p>
+  This would probably not happen if the protocol required that the sender use a different sequence number each time it made a new connection.
+  The bank would recognize a repeated sequence number and know that the request was a duplicate.
+  </p>
+  <li>Using a sequence number for each connection requires that the receiver keep a history of sequence numbers for each remote host for a specific time.
+  </li>
+  </ul> 
+  <h3>Connection Termination</h3>
+  <ul>
+    <li>Any of the two parties involved in exchanging data can close the connection.</li><li>      When connection in one direction is terminated, the other party can continue sending data in the other direction.</li><li>
+      So 4-actions are needed to close the connection in both directions.
+      </li>
+      <li>It can't be converted into 3 step process as both parties may not wish to terminate the communication at the same time.</li>
+  </ul>
+  <h4>Steps:</h4>
+  <ol>
+    <li>
+Host A sends a packet announcing its wish for connection termination.</li><li>
+Host B sends segment acknowledgement (confirming) the request of A.</li>
+After this connection is closed in one direction, but not in the other.</li><li>
+Host B can continue sending data to host A.</li><li>
+When host B finishes sending its own data, it sends a segment indicate that it wants to close the connection.</li><li>
+Host A acknowledges (confirms) the request of B.</li>
+
+  </ol>
+  <h2>Reliable vs Unreliable</h2>
+  <div class="res-ques">
+    <h4> How can we make a connection-oriented transport layer over a connectionless network-layer protocol such as IP?</h4>
+    <button class="ans-button">Show Answer</button>
+    <div class="ans-content">
+      <ul>
+     <li> According to the design goal of Internet, the two layers are totally independent.</li><li>
+      The transport layer only uses the services of the network layer.</li>
+      
+      <b>Example</b> <ul>
+        <li>The post office service is connectionless.</li>
+        <li>
+      Each parcel delivered to post office is independent from the next even if we deliver 100 parcels to the same destination.
+    </li>
+      <li>      The post office cannot guarantees that the parcels arrive at the same destination in order even if the parcels are numbered.
+
+      </li>
+      <li>
+      But we can create a connection-oriented service on the top of this service.</li><li>
+      We can have an agent at the destination city and send the numbered parcels to her.</li><li>
+      The agent can keep the parcels until all of them arrived.</li><li>
+      Then put them in order and delivered them to the destination.
+      If a parcel is lost the agent can ask for a duplicate.
+      We can create a connection to the post office and get her confirmation.</li><li>
+      After all parcels have been received, we can call again to announce the disconnection of the service.</li></ul>
+  </div></div>
+
+<p>
+The transport layer services can be reliable or unreliable.</p> <p>
+If the application-layer program needs the reliability, we use a reliable transport-layer protocol by implementing flow and error control at the transport-layer. (e.g. TCP) 
+Means a slower and complex service.<br>
+If the application program does NOT need reliability, (because it uses its own flow and error control (real-time applications)), then an unreliable protocol can be used. (e.g. UDP)
+</p>
+<div class="res-ques">
+  <h4>IF the data-link layer is reliable and has flow control and error control, do we need this at the transport layer too?
+  </h4>
+  <button class="ans-button">
+    Show Answer
+  </button>
+  <div class="ans-content">
+    The answer is YES…<br>
+Reliability at the data-link layer is between the two nodes, we need the reliability between the two ends.
+Because the network layer in the Internet is unreliable (best-effort-delivery). We need to implement reliability at the transport layer.
+
+  </div>
+</div><p>The image below shows that error-control at the data-link layer does not guarantee error control at the transport layer.
+</p>
+<div class="res-container">
+  <img src="6.png"
+</div>
