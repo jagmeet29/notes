@@ -1,0 +1,28 @@
+
+<script src="../comm.js"></script>
+<link rel="stylesheet" href="../css.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="stylesheet" href="css.css" />
+<div id="container">
+    <h1>TCP ( Transmission Control Protocol )</h1>
+    <blockquote>TCP operates at the transport layer (Layer 4) and provides a reliable, ordered, and error-checked communication service between applications running on different hosts connected via an IP network</blockquote>
+    <ul>
+        <li>Like UDP, TCP uses port numbers as transport layer Address.
+        </li>
+        <li>If an application can use both UDP and TCP, the same port number is assigned to this application.
+        </li>
+        <li>TCP is described as a stream-oriented protocol, it means that it treats the data being sent between two applications as a continuous, ordered sequence of bytes (or octets), rather than as a series of distinct messages or packets.</li>
+        <li>TCP creates an environment in which the two processes seem to be connected by an imaginary “tube” that carries their data across the Internet.  
+        </li></ul>
+        <div class="res-container">
+            <img src="11.png" width="500px" >
+        </div><ul>
+        <li>Buffers are needed for storage, because the sending and receiving processes may not produce and consume data at the same speed.</li><li>
+            There are to buffers, one for each direction</li>
+    </ul>
+    <div class="res-container">
+        <img src="12.png" width="500px">
+    </div>
+    
+    
