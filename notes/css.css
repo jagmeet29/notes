@@ -27,7 +27,7 @@
   --space-lg: 2em;
 
   /* Border radius */
-  --border-radius: 10px;
+  --border-radius: 7px;  
 }
 
 .res-ques h4 {
@@ -107,8 +107,9 @@ ol {
 blockquote {
   margin: var(--space-sm) 0;
   padding: var(--space-xs) var(--space-sm);
-  border-radius: 5px;
+  border-radius: var(--border-radius);
   background-color: var(--border-color);
+
   color: var(--text-color-light);
 }
 
@@ -210,6 +211,7 @@ button:focus {
 /* ---------- CONTAINERS & LAYOUT ---------- */
 .res-container {
   overflow-x: auto;
+
   -webkit-overflow-scrolling: touch;
   will-change: transform;
   isolation: isolate;
@@ -228,7 +230,8 @@ button:focus {
 
 .res-ques img {
   max-width: 100%;
-  height: auto;
+  height: auto; 
+  padding: 20px ;   
   border-radius: var(--border-radius);
   display: block;
   margin: 0 auto;
@@ -393,7 +396,7 @@ img {
 
   img {
     border-radius: var(--border-radius);
-    padding: 5px;
+
   }
 
   tbody tr:nth-child(even) {

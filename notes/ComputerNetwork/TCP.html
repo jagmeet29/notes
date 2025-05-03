@@ -27,5 +27,24 @@
     <div class="res-container">
         <img src="12.png" width="500px">
     </div>
-    
+    <ul><h6>Sender Side Buffer:</h6>
+        <li>At sending side, the buffer has three types of locations:
+
+            <li>The white section contains empty locations that can be filled by the sending process (producer).</li><li>
+            The grey area holds Bytes that have been sent but not yet acknowledged. (TCP keeps the Bytes in the buffer until it receives an acknowledgement).</li><li>
+            The colored area are Bytes to be send by sending TCP.</li><li>
+            
+            However, TCP may be able to send only part of this colored section, due to the slowness of the receiving process or congestion in the network.</li><li>
+            The circular shape is due to the fact that after Bytes in the grey locations are acknowledged, the location is recycled and available for use by sending process.
+            </li>
+            <h6>Receiver Side Buffer:</h6>
+            <li>The operation of the buffer at the receiver site is simpler.</li><li>
+                The circular buffer is divided into two areas (white and colored).</li><li>
+                
+                The white area contains empty locations to be filled by Bytes received from the network.</li><li>
+                The colored sections contain received Bytes that can be consumed by receiving process.</li><li>
+                
+                When a Byte is consumed by the receiving process, the location is recycled and added to the pool of empty locations.
+                </li>
+    </ul>
     
