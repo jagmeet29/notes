@@ -30,17 +30,17 @@
   </p>
   <div class="res-container">
     <center>
-      <img src="1.png" />
+      <img src="1.png" width="700px" />
       <caption>
-        123 NOR Based SR Latch
+         NOR Based SR Latch
       </caption>
     </center>
   </div>
   <div class="res-container">
     <center>
-      <img src="2.png" />
+      <img src="2.png"  width="700px"/>
       <caption>
-        123 NAND Based SR Latch
+        NAND Based SR Latch
       </caption>
     </center>
   </div>
@@ -139,7 +139,7 @@
   </p>
   <div class="res-container">
     <center>
-      <img src="3.png" />
+      <img src="3.png" width="700px" />
       <caption>
         SR Latch with Enable
       </caption>
@@ -186,7 +186,10 @@
     D (Data): Determines what value (0 or 1) will be stored</li><li>
     
     En (Enable): Controls when the latch responds to the D input</li></ul>
+<div class="res-container">
 
+  <img src="8.png" width="700px">
+</div>
    <h3> Operation of the D Latch</h3>
 
 <p>When the Enable input is HIGH (1), the output Q follows whatever value is present at the D input. This creates a "transparent" behavior, where changes at D are immediately reflected at Q.<br><br>
@@ -211,201 +214,63 @@
   <td>1</td><td>1</td><td>1</td><td>Set state</td>
 </tr>
   </table>
+  <h2>Issues with Latches in Sequential Circuits</h2>
+  The problem with latches in sequential circuits stems from their level-sensitive nature:
+  <ol><li>
+  When a latch's enable input is high, it remains transparent, allowing input changes to affect output</li><li>
+  
+  In sequential circuits, outputs feed back as inputs through combinational logic</li><li>
+  
+  This creates a continuous feedback loop that can cause unstable operation during the active clock period</li><li>
+  
+  This feedback path is what makes latches problematic in sequential circuits with common clock sources</li></ol>
 
 
-  <hr />
-  <h2>SR Latch</h2>
-  <pre><code class="language-verilog">
-    module sr_latch (
-      input wire enable,   // Enable input
-      input wire reset,    // Active high reset
-      input wire s,        // Set input
-      input wire r,        // Reset input
-      output reg q         // Output
-  );
-      
-      // Trigger on changes to enable, s, r, or reset
-      always @(enable or s or r or reset) begin
-          if (reset)
-              q <= 1'b0;           // Reset output to 0
-          else if (enable) begin
-              case ({s, r})
-                  2'b00: q <= q;      // No change
-                  2'b01: q <= 1'b0;   // Reset
-                  2'b10: q <= 1'b1;   // Set
-                  2'b11: q <= 1'bx;   // Invalid state
-              endcase
-          end
-          // else hold state (implicit)
-      end
-      
-  endmodule  
-</code></pre>
-  <h2>D Latch</h2>
-  <pre><code class="language-verilog">
-    module d_latch (
-      input wire enable,   // Enable input
-      input wire reset,    // Active high reset
-      input wire d,        // Data input
-      output reg q         // Output
-  );
-      
-      // Trigger on changes to enable, d, or reset
-      always @(enable or d or reset) begin
-          if (reset)
-              q <= 1'b0;           // Reset output to 0
-          else if (enable)
-              q <= d;              // Capture D when enabled
-          // else hold state (implicit)
-      end
-      
-  endmodule   
-  </code></pre>
-  <h2>Enabled D Latch</h2>
-  <pre><code class="language-verilog">
-    module enabled_d_latch (
-      input wire clk,      // Clock input (acts as enable)
-      input wire reset,    // Active high reset
-      input wire en,       // Enable signal
-      input wire d,        // Data input
-      output reg q         // Output
-  );
-      
-      // Trigger on changes to clock, en, d, or reset
-      always @(clk or en or d or reset) begin
-          if (reset)
-              q <= 1'b0;           // Reset output to 0
-          else if (clk && en)      // Only capture when both clock and enable are high
-              q <= d;
-          // else hold state (implicit)
-      end
-      
-  endmodule  
-  </code></pre>
-  <h2>Master Slave JK Flip Flop</h2>
-  <pre><code class="language-verilog">
-    module master_slave_jk_flip_flop (
-      input wire clk,      // Clock input
-      input wire reset,    // Active high reset
-      input wire j,        // J input
-      input wire k,        // K input
-      output reg q         // Output
-  );
-      
-      reg master_q;        // Master stage output
-      
-      // Master stage: captures on positive edge
-      always @(posedge clk or posedge reset) begin
-          if (reset)
-              master_q <= 1'b0;
-          else begin
-              case ({j, k})
-                  2'b00: master_q <= master_q;  // No change
-                  2'b01: master_q <= 1'b0;      // Reset
-                  2'b10: master_q <= 1'b1;      // Set
-                  2'b11: master_q <= ~master_q; // Toggle
-              endcase
-          end
-      end
-      
-      // Slave stage: captures on negative edge
-      always @(negedge clk or posedge reset) begin
-          if (reset)
-              q <= 1'b0;
-          else
-              q <= master_q;       // Transfer from master to slave
-      end
-      
-  endmodule  
-  </code></pre>
-  <h2>SR Flip Flop</h2>
-  <pre><code class="language-verilog">
-    module sr_flip_flop (
-      input wire clk,      // Clock input
-      input wire reset,    // Active high reset
-      input wire s,        // Set input
-      input wire r,        // Reset input
-      output reg q         // Output
-  );
-      
-      always @(posedge clk or posedge reset) begin
-          if (reset)
-              q <= 1'b0;   // Reset output to 0
-          else begin
-              case ({s, r})
-                  2'b00: q <= q;      // No change
-                  2'b01: q <= 1'b0;   // Reset
-                  2'b10: q <= 1'b1;   // Set
-                  2'b11: q <= 1'bx;   // Invalid state
-              endcase
-          end
-      end
-      
-  endmodule  
-  </code></pre>
-  <h2>JK Flip Flop</h2>
-  <pre><code class="language-verilog">
-    module jk_flip_flop (
-      input wire clk,      // Clock input
-      input wire reset,    // Active high reset
-      input wire j,        // J input (set)
-      input wire k,        // K input (reset)
-      output reg q         // Output
-  );
-      
-      always @(posedge clk or posedge reset) begin
-          if (reset)
-              q <= 1'b0;   // Reset output to 0
-          else begin
-              case ({j, k})
-                  2'b00: q <= q;      // No change
-                  2'b01: q <= 1'b0;   // Reset
-                  2'b10: q <= 1'b1;   // Set
-                  2'b11: q <= ~q;     // Toggle
-              endcase
-          end
-      end
-      
-  endmodule  
-  </code></pre>
-  <h2>T Flip Flop</h2>
-  <pre>
-    <code class="language-verilog">
-      module t_flip_flop (
-        input wire clk,      // Clock input
-        input wire reset,    // Active high reset
-        input wire t,        // Toggle input
-        output reg q         // Output
-    );
-        
-        always @(posedge clk or posedge reset) begin
-            if (reset)
-                q <= 1'b0;   // Reset output to 0
-            else if (t)
-                q <= ~q;     // Toggle output if t=1
-            // else maintain state (implicit)
-        end
-        
-    endmodule    
-    </code>
-  </pre>
-  <h2>D Flip Flop</h2>
-  <pre><code class="language-verilog">
-    module d_ff_pos (
-      input d,      // Data input
-      input clk,    // Clock input
-      input reset,  // Reset input
-      output reg q  // Output
-  );
-      
-      // Behavioral description using always block
-      always @(posedge clk or posedge reset) begin
-          if (reset)
-              q <= 1'b0;  // Asynchronous reset
-          else
-              q <= d;     // Store D input on positive clock edge
-      end
-      
-  endmodule  
-  </code></pre>
-</div>
+
+
+
+  <h2>Latch vs. Flip-Flop Comparison</h2>
+
+<table >
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Latch</th>
+      <th>Flip-Flop</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Triggering</strong></td>
+      <td>Level-triggered</td>
+      <td>Edge-triggered</td>
+    </tr>
+    <tr>
+      <td><strong>Sensitivity</strong></td>
+      <td>Sensitive to the <em>level</em> of the control signal (e.g., Enable = 1)</td>
+      <td>Sensitive to the <em>transition</em> (edge) of the clock signal (0→1 or 1→0)</td>
+    </tr>
+    <tr>
+      <td><strong>Response to Inputs</strong></td>
+      <td>Output can change multiple times if input changes while the enable signal is active ("transparent")</td>
+      <td>Samples input and changes output <em>only</em> at the specific clock edge</td>
+    </tr>
+    <tr>
+      <td><strong>Operation in Sequential Circuits (Common Clock)</strong></td>
+      <td>Can cause unreliable/unpredictable behavior due to feedback loops while the clock is active</td>
+      <td>Designed for reliable operation; state changes occur synchronously with clock edges</td>
+    </tr>
+    <tr>
+      <td><strong>Problem Addressed</strong></td>
+      <td>Solves SR latch's indeterminate state (D Latch)</td>
+      <td>Solves latch's sensitivity to pulse <em>duration</em>, enabling predictable synchronous operation</td>
+    </tr>
+    <tr>
+      <td><strong>Construction Methods Discussed</strong></td>
+      <td>Cross-coupled gates (like SR), Gated D Latch</td>
+      <td>Master-Slave configuration (using two latches), specific edge-triggering circuit designs</td>
+    </tr>
+  </tbody>
+</table>
+
+
