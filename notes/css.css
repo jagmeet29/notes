@@ -339,7 +339,8 @@ pre[class*="language-"] {
 }
 
 /* ---------- RESPONSIVE STYLES ---------- */
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 600) {
   * {
     -webkit-tap-highlight-color: transparent;
   }
@@ -350,6 +351,35 @@ img {
 }
   body {
     font-size: 1em;
+  }
+
+  #container {
+    width: 97%;
+    margin: 0 auto;
+  }
+
+  /* ---------- TYPOGRAPHY ---------- */
+
+  .res-container div[style="display: flex"] {
+    flex-direction: column;
+  }
+
+  img {
+    content-visibility: auto;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+img {
+  width: 100%;
+  height: auto;
+  margin: 0px auto;
+}
+  body {
+    font-size: 1.1em;
   }
 
   #container {
