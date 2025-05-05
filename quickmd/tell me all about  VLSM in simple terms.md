@@ -43,37 +43,75 @@ With VLSM, you can create appropriately sized subnets for each need instead of c
 
 VLSM is supported by modern routing protocols like OSPF, EIGRP, BGP, and RIP version 2[^2][^3].
 
-Would you like me to explain how to actually implement VLSM with a specific example?
+# VLSM Example Implementation
 
-<div style="text-align: center">⁂</div>
+VLSM (Variable Length Subnet Mask) allows you to create subnets of different sizes based on actual requirements, which helps optimize IP address usage. Let me walk you through a practical example:
 
-[^1]: https://www.techtarget.com/searchnetworking/definition/variable-length-subnet-mask
+## Step 1: Identify Host Requirements
 
-[^2]: https://nordvpn.com/cybersecurity/glossary/vlsm/
+First, let's arrange network segments by host requirements (from largest to smallest):
 
-[^3]: https://www.comparitech.com/net-admin/variable-length-subnet-mask-vlsm-tutorial/
+- HQ LAN: 50 hosts
+- BRANCH 1: 30 hosts
+- BRANCH 2: 20 hosts
+- WAN Links (3 connections): 2 hosts each[4]
 
-[^4]: https://www.networkacademy.io/ccna/ip-subnetting/what-is-vlsm
+## Step 2: Available Address Space
 
-[^5]: https://www.pynetlabs.com/what-is-vlsm-variable-length-subnet-mask/
+Let's say we have the subnet 192.168.10.0/24 (a Class C network with 256 addresses) to divide.
 
-[^6]: https://study-ccna.com/variable-length-subnet-mask-vlsm/
+## Step 3: Subnet the Largest Network First
 
-[^7]: https://www.netmaker.io/resources/vlsm
+For HQ LAN (50 hosts):
+- Required hosts: 50
+- Add 2 (network + broadcast): 52 total addresses needed
+- We need 6 host bits (2^6 - 2 = 62 hosts)
+- Subnet mask: /26 (255.255.255.192)
+- Network address: 192.168.10.0
+- Broadcast address: 192.168.10.63
+- Usable range: 192.168.10.1 to 192.168.10.62[4]
 
-[^8]: https://www.youtube.com/watch?v=N7BEDtZ7G4g
+## Step 4: Next Largest Network
 
-[^9]: https://www.tutorialspoint.com/variable-length-subnet-mask-vlsm
+For BRANCH 1 (30 hosts):
+- Required hosts: 30
+- Add 2: 32 total addresses needed
+- We need 5 host bits (2^5 - 2 = 30 hosts)
+- Subnet mask: /27 (255.255.255.224)
+- Network address: 192.168.10.64
+- Broadcast address: 192.168.10.95
+- Usable range: 192.168.10.65 to 192.168.10.94[4][5]
 
-[^10]: https://www.computernetworkingnotes.com/ccna-study-guide/vlsm-subnetting-examples-and-calculation-explained.html
+## Step 5: Continue with Remaining Networks
 
-[^11]: https://networklessons.com/subnetting/variable-length-subnet-mask-vlsm
+For BRANCH 2 (20 hosts):
+- Required hosts: 20
+- Add 2: 22 total addresses needed
+- We need 5 host bits (2^5 - 2 = 30 hosts)
+- Subnet mask: /27 (255.255.255.224)
+- Network address: 192.168.10.96
+- Broadcast address: 192.168.10.127
+- Usable range: 192.168.10.97 to 192.168.10.126[1][5]
 
-[^12]: https://www.computernetworkingnotes.com/ccna-study-guide/vlsm-subnetting-explained-with-examples.html
+## Step 6: WAN Links
 
-[^13]: https://www.youtube.com/watch?v=gGFahxwt5j0
+For each WAN link (2 hosts each):
+- Required hosts: 2
+- Add 2: 4 total addresses needed
+- We need 2 host bits (2^2 - 2 = 2 hosts)
+- Subnet mask: /30 (255.255.255.252)
 
-[^14]: https://www.scaler.in/variable-length-subnet-mask/
+WAN Link 1:
+- Network: 192.168.10.128/30
+- Usable: 192.168.10.129 to 192.168.10.130[1][4]
 
-[^15]: https://www.youtube.com/watch?v=IgthYZ9N1vs
+WAN Link 2:
+- Network: 192.168.10.132/30
+- Usable: 192.168.10.133 to 192.168.10.134[4]
+
+WAN Link 3:
+- Network: 192.168.10.136/30
+- Usable: 192.168.10.137 to 192.168.10.138[4]
+
+This VLSM implementation uses different subnet masks (/26, /27, and /30) based on actual requirements, making it much more efficient than FLSM which would force all subnets to be the same size.
 
