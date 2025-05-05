@@ -12,7 +12,7 @@
   --text-note-color: #ce990a;
 
   /* Question box colors */
-  --question-bg: rgba(166, 159, 29, 0.27);
+  --question-bg: rgba(166, 159, 29, 0.137);
 
   /* Table colors */
   --table-header-bg: rgba(173, 102, 102, 0.17);
@@ -33,7 +33,23 @@
 .res-ques h4 {
   font-size: 1.2em;
 }
-
+footer{
+  background-color: var(--bg-color-alt);
+  padding: 20px 20px;
+  margin: 30px 0px 0px 0px;
+  height: 11rem; 
+  font-size: var(--space-xss);
+}
+.footer{
+width: 70%;
+margin: 0 auto;
+}
+footer p {
+  margin: 0px;
+  padding: 0px;
+  font-size: 1.2em;
+  color: var(--text-color);
+}
 .note {
   color: var(--text-note-color);
 }
@@ -42,7 +58,7 @@ body {
   font-size: 1.2em;
   line-height: 1.5;
   margin: 0;
-  padding: 16px;
+  padding: 0px;
   color: var(--text-color);
 }
 
@@ -118,20 +134,23 @@ a {
   color: var(--accent-color);
   text-decoration: none;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: var(--border-radius);
+  border-radius:10px;
 }
 
 a:hover {
   padding: 3px 10px;
   color: #ffffff;
   background-color: rgb(81, 125, 246);
-  border-radius: var(--border-radius);
+  border-radius: 10px;
   text-decoration: none;
 }
 
-a:active {
+a:focus {
+  padding: 3px 10px;
   color: #ffffff;
   background-color: rgb(81, 125, 246);
+  border-radius: 10px;
+  text-decoration: none;
 }
 
 .anoblue {
@@ -222,46 +241,21 @@ button:focus {
   border-radius: var(--border-radius);
   padding: 15px;
   margin-bottom: 20px;
-  box-shadow: 0 4px 8px var(--shadow-color);
+
   transform: translateY(0);
   transition: transform 0.3s ease-out;
   will-change: transform;
 }
 
 .res-ques img {
-  max-width: 100%;
+  width: 80%;
   height: auto; 
-  padding: 20px ;   
+
   border-radius: var(--border-radius);
   display: block;
   margin: 0 auto;
 }
 
-/* ---------- ANIMATIONS ---------- */
-.underline {
-  height: 3px;
-  border-radius: var(--border-radius);
-  margin: 0 10px;
-  background: linear-gradient(
-    to right,
-    orange,
-    rgb(151, 1, 151),
-    violet,
-    pink,
-    violet
-  );
-  background-size: 200%;
-  animation: gradientShift 5s infinite;
-}
-
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
 
 /* ---------- ANSWER CONTENT ANIMATIONS ---------- */
 .ans-content {
@@ -357,7 +351,10 @@ img {
     width: 97%;
     margin: 0 auto;
   }
-
+  .footer{
+    width: 100%;
+    margin: 0 auto;
+    }
   /* ---------- TYPOGRAPHY ---------- */
 
   .res-container div[style="display: flex"] {
@@ -377,7 +374,10 @@ img {
   width: 100%;
   height: auto;
   margin: 0px auto;
-}
+}.footer{
+  width: 100%;
+  margin: 0 auto;
+  }
   body {
     font-size: 1.1em;
   }
