@@ -37,7 +37,7 @@ footer{
   background-color: var(--bg-color-alt);
   padding: 20px 20px;
   margin: 30px 0px 0px 0px;
-  height: 11rem; 
+
   font-size: var(--space-xss);
 }
 .footer{
