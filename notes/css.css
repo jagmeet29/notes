@@ -29,6 +29,10 @@
   /* Border radius */
   --border-radius: 7px;  
 }
+footer{
+  background-color: rgba(211, 211, 211, 0.436);
+  height: 180px;
+}
 
 .res-ques h4 {
   font-size: 1.2em;
@@ -41,8 +45,7 @@ body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 1.2em;
   line-height: 1.5;
-  margin: 0;
-  padding: 16px;
+padding: 0px;margin: 0px;
   color: var(--text-color);
 }
 
@@ -125,13 +128,14 @@ a:hover {
   padding: 3px 10px;
   color: #ffffff;
   background-color: rgb(81, 125, 246);
-  border-radius: var(--border-radius);
+  border-radius: 10px;
   text-decoration: none;
 }
 
 a:active {
   color: #ffffff;
   background-color: rgb(81, 125, 246);
+  border-radius: 10px;
 }
 
 .anoblue {
