@@ -55,6 +55,7 @@ From a client PC:
 Once connected, you can:
 - **Upload a file**: `put filename.txt`
 - **Download a file**: `get filename.txt`
+- **List all files**: `dir`
 - **Exit FTP**: `quit`[5]
 
 To create a test file, use the text editor in Packet Tracer, save the file, then use the FTP commands to transfer it between machines.
