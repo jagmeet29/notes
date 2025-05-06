@@ -57,3 +57,14 @@ OSPF stores information in three tables:
 - **Topology table:** Complete network topology structure[2]
 - **Routing table:** Best calculated routes[2]
 
+# Commands
+```
+en
+config t
+router ospf [process_ID]
+network [IP_address] [wildcard_mask] area [area-id]
+exit
+
+```
+
+There is a new area between 2 routers
