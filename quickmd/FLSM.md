@@ -1,10 +1,14 @@
-# Understanding FLSM and Implementation in Packet Tracer
+# Fixed Length Subnet Mask (FLSM) Explained
 
 ## What is FLSM?
 
-Fixed Length Subnet Mask (FLSM) is a subnet deployment strategy where a network is divided into multiple subnets of identical size[3][4]. Also known as classful subnetting or traditional subnetting, FLSM creates equal-sized subnets that all use the same subnet mask[7][8].
+FLSM (Fixed Length Subnet Mask) is a subnetting technique where all subnets have the exact same size. When you divide a network using FLSM, each subnet has:
 
-FLSM is ideal when you have networks with similar host requirements. For example, if you have four departments each needing 50 hosts, FLSM would be appropriate[5].
+- Equal number of hosts
+- The same subnet mask
+- The same amount of available IP addresses[1][4]
+
+FLSM is also known as classful subnetting or traditional subnetting[3].
 
 ## FLSM vs VLSM Comparison
 
@@ -16,6 +20,38 @@ FLSM is ideal when you have networks with similar host requirements. For example
 | Easier to configure | More complex |
 | More IP address wastage | Less IP address wastage |
 | Supports both classful and classless routing | Supports only classless routing |
+
+
+## FLSM Calculation Process
+
+To calculate FLSM subnetting:
+
+1. **Identify requirements**: Determine how many subnets you need
+2. **Determine bits to borrow**: Use the formula 2^s ≥ (required subnets), where s = bits borrowed
+3. **Calculate subnet mask**: Add the borrowed bits to the default subnet mask
+4. **Calculate hosts per subnet**: 2^h - 2, where h = remaining host bits
+5. **Determine subnet ranges**: Calculate each subnet's network ID, broadcast address, and usable range
+
+## Example of FLSM Calculation
+
+Let's divide 192.168.10.0/24 into 4 subnets:
+
+1. **Determine bits to borrow**: 
+   - 2^s ≥ 4, so s = 2 bits
+
+2. **Calculate new subnet mask**:
+   - Original: 255.255.255.0 (/24)
+   - Borrow 2 bits: 255.255.255.192 (/26)[4]
+
+3. **Hosts per subnet**:
+   - 2^6 - 2 = 62 hosts per subnet[2]
+
+4. **Subnet ranges**:
+   - Subnet 1: 192.168.10.0/26 (0-63)
+   - Subnet 2: 192.168.10.64/26 (64-127)
+   - Subnet 3: 192.168.10.128/26 (128-191)
+   - Subnet 4: 192.168.10.192/26 (192-255)[4]
+
 
 ## FLSM Implementation in Packet Tracer
 
